@@ -1,0 +1,23 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-amsdlibdir
+sim/lif/xcelium.d/AMSD
+-MESSAGES
++EMGRLOG
+sim/logs/lif_neuron_xrun.log
+-XLSTIME
+1793081250
+-XLKEEP
+-XLMODE
+sim/lif/xcelium.d/run.lnx8664.24.09.d
+-RUNMODE
+-CDSLIB
+sim/lif/xcelium.d/run.lnx8664.24.09.d/cds.lib
+-HDLVAR
+sim/lif/xcelium.d/run.lnx8664.24.09.d/hdl.var
+-XLNAME
+xrun
+-XLVERSION
+"TOOL:	xrun(64)	24.09-s005"

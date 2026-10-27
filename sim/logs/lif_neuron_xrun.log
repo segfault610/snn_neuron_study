@@ -1,0 +1,60 @@
+xrun(64): 24.09-s005: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	24.09-s005: Started on Oct 27, 2026 at 11:37:30 IST
+xrun
+	-64bit
+	-sv
+	-timescale 1ns/1ps
+	-access +rwc
+	-top tb_lif_neuron
+	-l sim/logs/lif_neuron_xrun.log
+	-xmlibdirname sim/lif/xcelium.d
+	rtl/lif/lif_neuron.sv
+	tb/lif/tb_lif_neuron.sv
+file: rtl/lif/lif_neuron.sv
+	module worklib.lif_neuron:sv
+		errors: 0, warnings: 0
+file: tb/lif/tb_lif_neuron.sv
+	module worklib.tb_lif_neuron:sv
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		tb_lif_neuron
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.lif_neuron:sv <0x4d833942>
+			streams:   5, words:  1806
+		worklib.tb_lif_neuron:sv <0x2ec0fea4>
+			streams:  10, words: 15708
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 2       2
+		Registers:              16      16
+		Scalar wires:            5       -
+		Vectored wires:          4       -
+		Always blocks:           3       3
+		Initial blocks:          2       2
+		Cont. assignments:       1       1
+		Pseudo assignments:      6       -
+		Process Clocks:          1       1
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.tb_lif_neuron:sv
+Loading snapshot worklib.tb_lif_neuron:sv .................... Done
+xcelium> source /home/cadence/install_RB_8.7/XCELIUM2409/tools/xcelium/files/xmsimrc
+xcelium> run
+Reset PASSED: spike=0 membrane=0
+Update 1 PASSED: spike=0 membrane=100
+Update 2 PASSED: spike=0 membrane=175
+Update 3 PASSED: spike=0 membrane=232
+Threshold crossing PASSED: spike=1 membrane=0
+Spike pulse width PASSED: spike=0 membrane=0
+Enable test setup PASSED: spike=0 membrane=100
+Enable hold PASSED: spike=0 membrane=100
+
+ALL LIF NEURON TESTS PASSED
+Simulation complete via $finish(1) at time 86 NS + 0
+./tb/lif/tb_lif_neuron.sv:129         $finish;
+xcelium> exit
+TOOL:	xrun(64)	24.09-s005: Exiting on Oct 27, 2026 at 11:37:33 IST  (total: 00:00:03)

@@ -1,0 +1,25 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-XLMODE
+sim/lif/xcelium.d/run.lnx8664.24.09.d
+-RUNMODE
+-amsdlibdir
+sim/lif/xcelium.d/AMSD
+-sv
+-XMLIBDIRNAME
+sim/lif/xcelium.d
+rtl/lif/lif_neuron.sv
+tb/lif/tb_lif_neuron.sv
+-CDSLIB
+sim/lif/xcelium.d/run.lnx8664.24.09.d/cdsrun.lib
+-HDLVAR
+sim/lif/xcelium.d/run.lnx8664.24.09.d/hdlrun.var
+-no_analogsolver
+-MESSAGES
+-UPDATE
+-XLLIBSTORE
+sim/lif/xcelium.d/run.lnx8664.24.09.d/xllibs
+-ALLOWUNBOUND
+-hastop
