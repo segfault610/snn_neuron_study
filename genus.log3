@@ -1,0 +1,136 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2022 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[18:28:41.427970] Configured Lic search path (21.01-s002): 5280@14.139.1.126:1717@14.139.1.126
+
+Version: 21.14-s082_1, built Thu Jun 23 02:02:08 PDT 2022
+Options: -files asic/scripts/run_genus.tcl 
+Date:    Tue Oct 27 18:28:41 2026
+Host:    cadence-server.vit.ac.in (x86_64 w/Linux 4.18.0-477.21.1.el8_8.x86_64) (16cores*32cpus*1physical cpu*Intel(R) Xeon(R) Gold 6346 CPU @ 3.10GHz 36864KB) (1055760632KB)
+PID:     2292351
+OS:      Red Hat Enterprise Linux release 8.8 (Ootpa)
+
+FlexNet Licensing checkout error: Cannot read data from license server system.
+ The license server system appears to be running, but is not
+responding.  If this persists, notify the System Administrator.
+(The license server manager (lmgrd) and vendor daemon processes
+should be terminated and restarted.)
+Feature:       Genus_Synthesis
+Hostname:      14.139.1.126
+License path:  5280@14.139.1.126:1717@14.139.1.126:
+FlexNet Licensing error:-16,287
+license file(s):  5280@14.139.1.126 1717@14.139.1.126
+FlexNet Licensing checkout error: Cannot read data from license server system.
+ The license server system appears to be running, but is not
+responding.  If this persists, notify the System Administrator.
+(The license server manager (lmgrd) and vendor daemon processes
+should be terminated and restarted.)
+Feature:       Genus_Synthesis
+Hostname:      14.139.1.126
+License path:  5280@14.139.1.126:1717@14.139.1.126:
+FlexNet Licensing error:-16,287
+license file(s):  5280@14.139.1.126 1717@14.139.1.126
+FlexNet Licensing checkout error: Cannot read data from license server system.
+ The license server system appears to be running, but is not
+responding.  If this persists, notify the System Administrator.
+(The license server manager (lmgrd) and vendor daemon processes
+should be terminated and restarted.)
+Feature:       Genus_Synthesis
+Hostname:      14.139.1.126
+License path:  5280@14.139.1.126:1717@14.139.1.126:
+FlexNet Licensing error:-16,287
+license file(s):  5280@14.139.1.126 1717@14.139.1.126
+FlexNet Licensing checkout error: Cannot read data from license server system.
+ The license server system appears to be running, but is not
+responding.  If this persists, notify the System Administrator.
+(The license server manager (lmgrd) and vendor daemon processes
+should be terminated and restarted.)
+Feature:       Genus_Synthesis
+Hostname:      14.139.1.126
+License path:  5280@14.139.1.126:1717@14.139.1.126:
+FlexNet Licensing error:-16,287
+license file(s):  5280@14.139.1.126 1717@14.139.1.126
+Checking out license: Genus_Synthesis (66 seconds elapsed).
+License 'Genus_Synthesis' (main version: 21.1, alternate version: 21.1) checkout failed.
+FlexNet Licensing checkout error: Cannot read data from license server system.
+ The license server system appears to be running, but is not
+responding.  If this persists, notify the System Administrator.
+(The license server manager (lmgrd) and vendor daemon processes
+should be terminated and restarted.)
+Feature:       Virtuoso_Digital_Implem
+Hostname:      14.139.1.126
+License path:  5280@14.139.1.126:1717@14.139.1.126:
+FlexNet Licensing error:-16,287
+license file(s):  5280@14.139.1.126 1717@14.139.1.126
+FlexNet Licensing checkout error: Cannot read data from license server system.
+ The license server system appears to be running, but is not
+responding.  If this persists, notify the System Administrator.
+(The license server manager (lmgrd) and vendor daemon processes
+should be terminated and restarted.)
+Feature:       Virtuoso_Digital_Implem
+Hostname:      14.139.1.126
+License path:  5280@14.139.1.126:1717@14.139.1.126:
+FlexNet Licensing error:-16,287
+license file(s):  5280@14.139.1.126 1717@14.139.1.126
+FlexNet Licensing checkout error: Cannot connect to license server system.
+ The license server manager (lmgrd) has not been started yet,
+ the wrong port@host or license file is being used, or the
+ port or hostname in the license file has been changed.
+Feature:       Virtuoso_Digital_Implem
+Server name:   14.139.1.126
+License path:  5280@14.139.1.126:1717@14.139.1.126:
+FlexNet Licensing error:-15,570.  System Error: 115 "Operation now in progress"
+license file(s):  5280@14.139.1.126 1717@14.139.1.126
+FlexNet Licensing checkout error: Cannot connect to license server system.
+ The license server manager (lmgrd) has not been started yet,
+ the wrong port@host or license file is being used, or the
+ port or hostname in the license file has been changed.
+Feature:       Virtuoso_Digital_Implem
+Server name:   14.139.1.126
+License path:  5280@14.139.1.126:1717@14.139.1.126:
+FlexNet Licensing error:-15,570.  System Error: 115 "Operation now in progress"
+license file(s):  5280@14.139.1.126 1717@14.139.1.126
+Checking out license: Virtuoso_Digital_Implem (40 seconds elapsed).
+License 'Virtuoso_Digital_Implem' (main version: 21.1, alternate version: 21.1) checkout failed.
+FlexNet Licensing checkout error: Cannot connect to license server system.
+ The license server manager (lmgrd) has not been started yet,
+ the wrong port@host or license file is being used, or the
+ port or hostname in the license file has been changed.
+Feature:       Virtuoso_Digital_Implem_XL
+Server name:   14.139.1.126
+License path:  5280@14.139.1.126:1717@14.139.1.126:
+FlexNet Licensing error:-15,570.  System Error: 115 "Operation now in progress"
+license file(s):  5280@14.139.1.126 1717@14.139.1.126
+FlexNet Licensing checkout error: Cannot connect to license server system.
+ The license server manager (lmgrd) has not been started yet,
+ the wrong port@host or license file is being used, or the
+ port or hostname in the license file has been changed.
+Feature:       Virtuoso_Digital_Implem_XL
+Server name:   14.139.1.126
+License path:  5280@14.139.1.126:1717@14.139.1.126:
+FlexNet Licensing error:-15,570.  System Error: 115 "Operation now in progress"
+license file(s):  5280@14.139.1.126 1717@14.139.1.126
+FlexNet Licensing checkout error: Cannot connect to license server system.
+ The license server manager (lmgrd) has not been started yet,
+ the wrong port@host or license file is being used, or the
+ port or hostname in the license file has been changed.
+Feature:       Virtuoso_Digital_Implem_XL
+Server name:   14.139.1.126
+License path:  5280@14.139.1.126:1717@14.139.1.126:
+FlexNet Licensing error:-15,570.  System Error: 115 "Operation now in progress"
+license file(s):  5280@14.139.1.126 1717@14.139.1.126
+FlexNet Licensing checkout error: Cannot connect to license server system.
+ The license server manager (lmgrd) has not been started yet,
+ the wrong port@host or license file is being used, or the
+ port or hostname in the license file has been changed.
+Feature:       Virtuoso_Digital_Implem_XL
+Server name:   14.139.1.126
+License path:  5280@14.139.1.126:1717@14.139.1.126:
+FlexNet Licensing error:-15,570.  System Error: 115 "Operation now in progress"
+license file(s):  5280@14.139.1.126 1717@14.139.1.126
+Checking out license: Virtuoso_Digital_Implem_XL (41 seconds elapsed).
+License 'Virtuoso_Digital_Implem_XL' (main version: 21.1, alternate version: 21.1) checkout failed.
+Cannot obtain 'Genus_Synthesis' license.
+Abnormal exit.
