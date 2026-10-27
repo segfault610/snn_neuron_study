@@ -9,3 +9,9 @@ GENUS_lif_neuron_slow	PASS	0	/home/userdata/24bvd0198/snn_neuron_study/results/r
 GENUS_lif_neuron_typical	PASS	0	/home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/GENUS_lif_neuron_typical.log
 GENUS_lif_neuron_fast	PASS	0	/home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/GENUS_lif_neuron_fast.log
 GENUS_lif_layer_slow	PASS	0	/home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/GENUS_lif_layer_slow.log
+GENUS_lif_layer_typical	FAIL	1	/home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/GENUS_lif_layer_typical.log
+GENUS_lif_layer_fast	PASS	0	/home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/GENUS_lif_layer_fast.log
+GENUS_izhikevich_neuron_slow	PASS	0	/home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/GENUS_izhikevich_neuron_slow.log
+GENUS_izhikevich_neuron_typical	PASS	0	/home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/GENUS_izhikevich_neuron_typical.log
+GENUS_izhikevich_neuron_fast	PASS	0	/home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/GENUS_izhikevich_neuron_fast.log
+GENUS_izhikevich_layer_slow	PASS	0	/home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/GENUS_izhikevich_layer_slow.log

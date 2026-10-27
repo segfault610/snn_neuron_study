@@ -1,0 +1,22 @@
+xrun(64): 24.09-s005: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	24.09-s005: Started on Oct 27, 2026 at 15:46:40 IST
+xrun
+	-64bit
+	-sv
+	rtl/izhikevich/izhikevich_neuron.sv
+	rtl/izhikevich/izhikevich_layer.sv
+	tb/izhikevich/tb_izhikevich_layer.sv
+	-top tb_izhikevich_layer
+	-access +rwc
+	-xmlibdirname /home/userdata/24bvd0198/snn_neuron_study/results/repair_20261027_135909/xcelium_izhikevich_tb_izhikevich_layer
+	-l /home/userdata/24bvd0198/snn_neuron_study/results/repair_20261027_135909/xrun_izhikevich_tb_izhikevich_layer.log
+	-run
+Loading snapshot worklib.tb_izhikevich_layer:sv .................... Done
+xcelium> source /home/cadence/install_RB_8.7/XCELIUM2409/tools/xcelium/files/xmsimrc
+xcelium> run
+Izhikevich layer: spikes=0000
+Izhikevich layer: v0=-65 v1=-65 v2=-65 v3=-65
+Simulation complete via $finish(1) at time 2020 NS + 0
+./tb/izhikevich/tb_izhikevich_layer.sv:46         $finish;
+xcelium> exit
+TOOL:	xrun(64)	24.09-s005: Exiting on Oct 27, 2026 at 15:46:44 IST  (total: 00:00:04)

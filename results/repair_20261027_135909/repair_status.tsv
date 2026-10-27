@@ -1,0 +1,13 @@
+JOB	STATUS	EXIT_CODE	DETAIL
+SIM_lif_tb_lif_layer	PASS	0	Layer simulation completed
+SIM_izhikevich_tb_izhikevich_layer	PASS	0	Layer simulation completed
+SIM_hodgkin_huxley_tb_hodgkin_huxley_layer	PASS	0	Layer simulation completed
+GENUS_lif_layer_slow	SKIPPED	0	Netlist and reports already exist; synthesis completion confirmed
+GENUS_lif_layer_typical	SKIPPED	0	Netlist and reports already exist; synthesis completion confirmed
+GENUS_lif_layer_fast	SKIPPED	0	Netlist and reports already exist; synthesis completion confirmed
+GENUS_izhikevich_layer_slow	SKIPPED	0	Netlist and reports already exist; synthesis completion confirmed
+GENUS_izhikevich_layer_typical	FAIL	127	Check /home/userdata/24bvd0198/snn_neuron_study/asic/logs/GENUS_izhikevich_layer_typical.log and /home/userdata/24bvd0198/snn_neuron_study/results/repair_20261027_135909/GENUS_izhikevich_layer_typical.console.log
+GENUS_izhikevich_layer_fast	SKIPPED	0	Netlist and reports already exist; synthesis completion confirmed
+GENUS_hodgkin_huxley_layer_slow	FAIL	127	Check /home/userdata/24bvd0198/snn_neuron_study/asic/logs/GENUS_hodgkin_huxley_layer_slow.log and /home/userdata/24bvd0198/snn_neuron_study/results/repair_20261027_135909/GENUS_hodgkin_huxley_layer_slow.console.log
+GENUS_hodgkin_huxley_layer_typical	FAIL	127	Check /home/userdata/24bvd0198/snn_neuron_study/asic/logs/GENUS_hodgkin_huxley_layer_typical.log and /home/userdata/24bvd0198/snn_neuron_study/results/repair_20261027_135909/GENUS_hodgkin_huxley_layer_typical.console.log
+GENUS_hodgkin_huxley_layer_fast	FAIL	127	Check /home/userdata/24bvd0198/snn_neuron_study/asic/logs/GENUS_hodgkin_huxley_layer_fast.log and /home/userdata/24bvd0198/snn_neuron_study/results/repair_20261027_135909/GENUS_hodgkin_huxley_layer_fast.console.log

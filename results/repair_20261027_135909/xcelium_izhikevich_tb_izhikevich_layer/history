@@ -1,0 +1,6 @@
+//
+// File created by:  xrun
+// Do not modify this file
+
+s1::(27Oct2026:14:03:56):( xrun -64bit -sv rtl/izhikevich/izhikevich_neuron.sv rtl/izhikevich/izhikevich_layer.sv tb/izhikevich/tb_izhikevich_layer.sv -top tb_izhikevich_layer -access +rwc -xmlibdirname /home/userdata/24bvd0198/snn_neuron_study/results/repair_20261027_135909/xcelium_izhikevich_tb_izhikevich_layer -l /home/userdata/24bvd0198/snn_neuron_study/results/repair_20261027_135909/xrun_izhikevich_tb_izhikevich_layer.log -run )&&(/home/userdata/24bvd0198/snn_neuron_study/results/repair_20261027_135909/xcelium_izhikevich_tb_izhikevich_layer/env.d/env.history.27Oct2026_14_03_56)
+s2::(27Oct2026:15:46:41):( xrun -64bit -sv rtl/izhikevich/izhikevich_neuron.sv rtl/izhikevich/izhikevich_layer.sv tb/izhikevich/tb_izhikevich_layer.sv -top tb_izhikevich_layer -access +rwc -xmlibdirname /home/userdata/24bvd0198/snn_neuron_study/results/repair_20261027_135909/xcelium_izhikevich_tb_izhikevich_layer -l /home/userdata/24bvd0198/snn_neuron_study/results/repair_20261027_135909/xrun_izhikevich_tb_izhikevich_layer.log -run )&&(/home/userdata/24bvd0198/snn_neuron_study/results/repair_20261027_135909/xcelium_izhikevich_tb_izhikevich_layer/env.d/env.history.27Oct2026_15_46_41)

@@ -136,3 +136,76 @@ STEP: GENUS_lif_layer_typical
 LOG : /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/GENUS_lif_layer_typical.log
 CMD : genus -files /home/userdata/24bvd0198/snn_neuron_study/asic/scripts/run_genus.tcl -log /home/userdata/24bvd0198/snn_neuron_study/asic/logs/GENUS_lif_layer_typical.log
 ------------------------------------------------------------
+RESULT: FAIL (exit 1)
+---- Last 30 lines of log ----
+       : -use_clock_freq : stim
+       : -stim :/stim#0
+       : -fromGenus : 1
+Info   : ACTP-0001 Timing initialization started
+Info   : ACTP-0001 Timing initialization ended
+Info   : PWRA-0002 [PwrInfo] Skipping activity propagation due to -skip_ap
+       : option....
+Warning: PWRA-0302 [PwrWarn] Frequency scaling is not applicable for vectorless
+       : flow. Ignoring frequency scaling.
+Warning: PWRA-0304 [PwrWarn] -stim option is not applicable with vectorless mode
+       : of power analysis, ignored this option.
+Info   : PWRA-0002 Started 'vectorless' power computation.
+Info   : PWRA-0009 [PwrInfo] Power Computation Progress Report :   0%   1%   2%   3%   4%   5%   6%   7%   8%   9%  10%  11%  12%  13%  14%  15%  16%  17%  18%  19%  20%  21%  22%  23%  24%  25%  26%  27%  28%  29%  30%  31%  32%  33%  34%  35%  36%  37%  38%  39%  40%  41%  42%  43%  44%  45%  46%  47%  48%  49%  50%  51%  52%  53%  54%  55%  56%  57%  58%  59%  60%  61%  62%  63%  64%  65%  66%  67%  68%  69%  70%  71%  72%  73%  74%  75%  76%  77%  78%  79%  80%  81%  82%  83%  84%  85%  86%  87%  88%  89%  90%  91%  92%  93%  94%  95%  96%  97%  98%  99% 100%
+Info   : PWRA-0002 Finished power computation.
+Info   : PWRA-0007 [PwrInfo] Completed successfully.
+       : Info=6, Warn=2, Error=0, Fatal=0
+Output file: /home/userdata/24bvd0198/snn_neuron_study/asic/reports/lif/layer/typical/power.rpt
+@file(run_genus.tcl) 73: puts "INFO: Synthesis completed: $model / $design_kind / $corner"
+INFO: Synthesis completed: lif / layer / typical
+@file(run_genus.tcl) 74: puts "INFO: Netlist: ${out_dir}/${top_module}_tm_netlist.v"
+INFO: Netlist: /home/userdata/24bvd0198/snn_neuron_study/asic/genus/lif/layer/typical/lif_layer_tm_netlist.v
+@file(run_genus.tcl) 75: exit
+
+Lic Summary:
+[12:56:01.508376] Cdslmd servers: cadence-c2s
+[12:56:01.508392] Feature usage summary:
+[12:56:01.508393] Genus_Synthesis
+
+XIO:  fatal IO error 88 (Socket operation on non-socket) on X server "localhost:29.0"
+      after 1272 requests (701 known processed) with 0 events remaining.
+
+------------------------------------------------------------
+STEP: GENUS_lif_layer_fast
+LOG : /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/GENUS_lif_layer_fast.log
+CMD : genus -files /home/userdata/24bvd0198/snn_neuron_study/asic/scripts/run_genus.tcl -log /home/userdata/24bvd0198/snn_neuron_study/asic/logs/GENUS_lif_layer_fast.log
+------------------------------------------------------------
+RESULT: PASS (exit 0)
+
+------------------------------------------------------------
+STEP: GENUS_izhikevich_neuron_slow
+LOG : /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/GENUS_izhikevich_neuron_slow.log
+CMD : genus -files /home/userdata/24bvd0198/snn_neuron_study/asic/scripts/run_genus.tcl -log /home/userdata/24bvd0198/snn_neuron_study/asic/logs/GENUS_izhikevich_neuron_slow.log
+------------------------------------------------------------
+RESULT: PASS (exit 0)
+
+------------------------------------------------------------
+STEP: GENUS_izhikevich_neuron_typical
+LOG : /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/GENUS_izhikevich_neuron_typical.log
+CMD : genus -files /home/userdata/24bvd0198/snn_neuron_study/asic/scripts/run_genus.tcl -log /home/userdata/24bvd0198/snn_neuron_study/asic/logs/GENUS_izhikevich_neuron_typical.log
+------------------------------------------------------------
+RESULT: PASS (exit 0)
+
+------------------------------------------------------------
+STEP: GENUS_izhikevich_neuron_fast
+LOG : /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/GENUS_izhikevich_neuron_fast.log
+CMD : genus -files /home/userdata/24bvd0198/snn_neuron_study/asic/scripts/run_genus.tcl -log /home/userdata/24bvd0198/snn_neuron_study/asic/logs/GENUS_izhikevich_neuron_fast.log
+------------------------------------------------------------
+RESULT: PASS (exit 0)
+
+------------------------------------------------------------
+STEP: GENUS_izhikevich_layer_slow
+LOG : /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/GENUS_izhikevich_layer_slow.log
+CMD : genus -files /home/userdata/24bvd0198/snn_neuron_study/asic/scripts/run_genus.tcl -log /home/userdata/24bvd0198/snn_neuron_study/asic/logs/GENUS_izhikevich_layer_slow.log
+------------------------------------------------------------
+RESULT: PASS (exit 0)
+
+------------------------------------------------------------
+STEP: GENUS_izhikevich_layer_typical
+LOG : /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/GENUS_izhikevich_layer_typical.log
+CMD : genus -files /home/userdata/24bvd0198/snn_neuron_study/asic/scripts/run_genus.tcl -log /home/userdata/24bvd0198/snn_neuron_study/asic/logs/GENUS_izhikevich_layer_typical.log
+------------------------------------------------------------

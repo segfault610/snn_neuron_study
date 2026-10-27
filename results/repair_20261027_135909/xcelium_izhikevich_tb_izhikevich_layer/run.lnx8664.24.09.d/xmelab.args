@@ -1,0 +1,25 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-amsdlibdir
+/home/userdata/24bvd0198/snn_neuron_study/results/repair_20261027_135909/xcelium_izhikevich_tb_izhikevich_layer/AMSD
+-ACCESS
++rwc
+-XMLIBDIRNAME
+/home/userdata/24bvd0198/snn_neuron_study/results/repair_20261027_135909/xcelium_izhikevich_tb_izhikevich_layer
+-no_analogsolver
+-MESSAGES
+tb_izhikevich_layer
+-dms_perf
+-XLMODE
+/home/userdata/24bvd0198/snn_neuron_study/results/repair_20261027_135909/xcelium_izhikevich_tb_izhikevich_layer/run.lnx8664.24.09.d
+-RUNMODE
+-CDSLIB
+/home/userdata/24bvd0198/snn_neuron_study/results/repair_20261027_135909/xcelium_izhikevich_tb_izhikevich_layer/run.lnx8664.24.09.d/cds.lib
+-HDLVAR
+/home/userdata/24bvd0198/snn_neuron_study/results/repair_20261027_135909/xcelium_izhikevich_tb_izhikevich_layer/run.lnx8664.24.09.d/hdl.var
+-WORK
+worklib
+-IRUNHASTOP
+-HASXLMODE

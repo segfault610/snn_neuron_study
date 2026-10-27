@@ -1,0 +1,13 @@
+87:    for tool in xrun genus lec conformal innovus tempus; do
+96:    xrun -version 2>&1 || true
+106:if ! command -v xrun >/dev/null 2>&1; then
+107:    echo "ERROR: xrun not found; skipping simulation phase."
+108:    printf 'SIMULATION_PHASE\tSKIPPED\t127\txrun not found\n' >> "$SUMMARY"
+110:    while IFS='|' read -r model rtl tb top; do
+113:        name="SIM_${model}_${top}"
+117:            xrun -64bit -sv \
+122:            -l "$RUN_DIR/xrun_${model}_${top}.log" \
+128:lif|rtl/lif/lif_layer.sv|tb/lif/tb_lif_layer.sv|tb_lif_layer
+129:izhikevich|rtl/izhikevich/izhikevich_layer.sv|tb/izhikevich/tb_izhikevich_layer.sv|tb_izhikevich_layer
+130:hodgkin_huxley|rtl/hodgkin_huxley/hodgkin_huxley_layer.sv|tb/hodgkin_huxley/tb_hodgkin_huxley_layer.sv|tb_hodgkin_huxley_layer
+263:        "$RUN_DIR"/SIM_*.log 2>/dev/null || true

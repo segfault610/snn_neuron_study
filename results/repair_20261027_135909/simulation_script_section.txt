@@ -1,0 +1,36 @@
+echo "Environment information saved."
+
+# ============================================================
+# PHASE 1: XCELIUM SIMULATION
+# ============================================================
+
+if ! command -v xrun >/dev/null 2>&1; then
+    echo "ERROR: xrun not found; skipping simulation phase."
+    printf 'SIMULATION_PHASE\tSKIPPED\t127\txrun not found\n' >> "$SUMMARY"
+else
+    while IFS='|' read -r model rtl tb top; do
+        [ -n "$model" ] || continue
+
+        name="SIM_${model}_${top}"
+        logfile="$RUN_DIR/${name}.log"
+
+        run_step "$name" "$logfile" \
+            xrun -64bit -sv \
+            "$rtl" "$tb" \
+            -top "$top" \
+            -access +rwc \
+            -xmlibdirname "$RUN_DIR/xcelium_${model}_${top}" \
+            -l "$RUN_DIR/xrun_${model}_${top}.log" \
+            -run
+    done <<'SIMS'
+lif|rtl/lif/lif_neuron.sv|tb/lif/tb_lif_neuron.sv|tb_lif_neuron
+izhikevich|rtl/izhikevich/izhikevich_neuron.sv|tb/izhikevich/tb_izhikevich_neuron.sv|tb_izhikevich_neuron
+hodgkin_huxley|rtl/hodgkin_huxley/hodgkin_huxley_neuron.sv|tb/hodgkin_huxley/tb_hodgkin_huxley_neuron.sv|tb_hodgkin_huxley_neuron
+lif|rtl/lif/lif_layer.sv|tb/lif/tb_lif_layer.sv|tb_lif_layer
+izhikevich|rtl/izhikevich/izhikevich_layer.sv|tb/izhikevich/tb_izhikevich_layer.sv|tb_izhikevich_layer
+hodgkin_huxley|rtl/hodgkin_huxley/hodgkin_huxley_layer.sv|tb/hodgkin_huxley/tb_hodgkin_huxley_layer.sv|tb_hodgkin_huxley_layer
+SIMS
+fi
+
+# ============================================================
+# PHASE 2: GENUS SYNTHESIS

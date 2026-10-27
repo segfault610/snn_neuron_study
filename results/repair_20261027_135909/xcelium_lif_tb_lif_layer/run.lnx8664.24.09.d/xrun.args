@@ -1,0 +1,18 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-64bit
+-sv
+rtl/lif/lif_neuron.sv
+rtl/lif/lif_layer.sv
+tb/lif/tb_lif_layer.sv
+-top
+tb_lif_layer
+-access
++rwc
+-xmlibdirname
+/home/userdata/24bvd0198/snn_neuron_study/results/repair_20261027_135909/xcelium_lif_tb_lif_layer
+-l
+/home/userdata/24bvd0198/snn_neuron_study/results/repair_20261027_135909/xrun_lif_tb_lif_layer.log
+-run

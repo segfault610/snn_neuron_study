@@ -1,0 +1,28 @@
+asic/scripts/run_everything.sh:13:export PROJECT_DIR
+asic/scripts/run_everything.sh:23:export RUN_DIR
+asic/scripts/run_everything.sh:87:    for tool in xrun genus lec conformal innovus tempus; do
+asic/scripts/run_everything.sh:97:    genus -version 2>&1 || true
+asic/scripts/run_everything.sh:135:# PHASE 2: GENUS SYNTHESIS
+asic/scripts/run_everything.sh:139:if ! command -v genus >/dev/null 2>&1; then
+asic/scripts/run_everything.sh:140:    echo "ERROR: genus not found; skipping synthesis phase."
+asic/scripts/run_everything.sh:141:    printf 'SYNTHESIS_PHASE\tSKIPPED\t127\tgenus not found\n' >> "$SUMMARY"
+asic/scripts/run_everything.sh:147:                export MODEL="$model"
+asic/scripts/run_everything.sh:148:                export DESIGN_KIND="$kind"
+asic/scripts/run_everything.sh:149:                export CORNER="$corner"
+asic/scripts/run_everything.sh:151:                name="GENUS_${model}_${kind}_${corner}"
+asic/scripts/run_everything.sh:155:                    genus \
+asic/scripts/run_everything.sh:156:                    -files "$PROJECT_DIR/asic/scripts/run_genus.tcl" \
+asic/scripts/run_everything.sh:188:                export MODEL="$model"
+asic/scripts/run_everything.sh:189:                export DESIGN_KIND="$kind"
+asic/scripts/run_everything.sh:190:                export CORNER="$corner"
+asic/scripts/run_everything.sh:207:                netlist="$PROJECT_DIR/asic/genus/${model}/${kind}/${corner}/${top}_tm_netlist.v"
+asic/scripts/run_everything.sh:250:find "$PROJECT_DIR/asic/genus" -type f -print \
+asic/scripts/run_everything.sh:268:        "$RUN_DIR"/GENUS_*.log 2>/dev/null || true
+asic/scripts/run_everything.sh:286:    "$PROJECT_DIR/asic/genus" \
+asic/scripts/run_genus.tcl:2:set model       $::env(MODEL)
+asic/scripts/run_genus.tcl:3:set corner      $::env(CORNER)
+asic/scripts/run_genus.tcl:4:set design_kind $::env(DESIGN_KIND)
+asic/scripts/run_genus.tcl:25:    error "Unknown MODEL=$model"
+asic/scripts/run_genus.tcl:35:    error "DESIGN_KIND must be neuron or layer"
+asic/scripts/run_genus.tcl:38:set out_dir "${project_dir}/asic/genus/${model}/${design_kind}/${corner}"
+asic/scripts/run_genus.tcl:53:puts "INFO: MODEL=$model DESIGN_KIND=$design_kind CORNER=$corner"

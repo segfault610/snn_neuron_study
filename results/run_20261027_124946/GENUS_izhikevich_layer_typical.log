@@ -1,0 +1,584 @@
+2026/10/27 13:44:15 WARNING This OS does not appear to be a Cadence supported Linux configuration.
+2026/10/27 13:44:15 For more info, please run CheckSysConf in <cdsRoot/tools.lnx86/bin/checkSysConf <productId>
+Could not connect to display: localhost:29.0
+GUI mode requires a valid DISPLAY.
+Reverting to shell mode.
+
+TMPDIR is being set to /tmp/genus_temp_1931831_cadence-server.vit.ac.in_24bvd0198_UcYNHq
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2022 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[13:44:15.427922] Configured Lic search path (21.01-s002): 5280@14.139.1.126:1717@14.139.1.126
+
+Version: 21.14-s082_1, built Thu Jun 23 02:02:08 PDT 2022
+Options: -files /home/userdata/24bvd0198/snn_neuron_study/asic/scripts/run_genus.tcl -log /home/userdata/24bvd0198/snn_neuron_study/asic/logs/GENUS_izhikevich_layer_typical.log 
+Date:    Tue Oct 27 13:44:16 2026
+Host:    cadence-server.vit.ac.in (x86_64 w/Linux 4.18.0-477.21.1.el8_8.x86_64) (16cores*32cpus*1physical cpu*Intel(R) Xeon(R) Gold 6346 CPU @ 3.10GHz 36864KB) (1055760632KB)
+PID:     1931831
+OS:      Red Hat Enterprise Linux release 8.8 (Ootpa)
+
+WARNING:Hostname to IPv4 and IPv6 address lookup failed for the host cadence-c2s
+WARNING:Hostname to IPv4 and IPv6 address lookup failed for the host cadence-c2s
+Checkout succeeded: Genus_Synthesis/3FFB3787901511A9760E
+	License file: 5280@14.139.1.126
+	License Server: 5280@14.139.1.126
+
+[13:44:17.394667] Periodic Lic check successful
+[13:44:17.394675] Feature usage summary:
+[13:44:17.394680] Genus_Synthesis
+Checking out license: Genus_Synthesis
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Loading tool scripts...WARNING:Hostname to IPv4 and IPv6 address lookup failed for the host cadence-c2s
+
+Finished loading tool scripts (7 seconds elapsed).
+
+#@ Processing -files option
+@genus 1> source /home/userdata/24bvd0198/snn_neuron_study/asic/scripts/run_genus.tcl
+#@ Begin verbose source /home/userdata/24bvd0198/snn_neuron_study/asic/scripts/run_genus.tcl
+@file(run_genus.tcl) 1: set project_dir $::env(PROJECT_DIR)
+@file(run_genus.tcl) 2: set model       $::env(MODEL)
+@file(run_genus.tcl) 3: set corner      $::env(CORNER)
+@file(run_genus.tcl) 4: set design_kind $::env(DESIGN_KIND)
+@file(run_genus.tcl) 6: set pdk_dir "/home/cadence/install/FOUNDRY/digital/90nm/dig"
+@file(run_genus.tcl) 7: set lib_file "${pdk_dir}/lib/${corner}.lib"
+@file(run_genus.tcl) 9: if {$model eq "lif"} {
+    set neuron_file "${project_dir}/rtl/lif/lif_neuron.sv"
+    set layer_file  "${project_dir}/rtl/lif/lif_layer.sv"
+    set neuron_top  "lif_neuron"
+    set layer_top   "lif_layer"
+} elseif {$model eq "izhikevich"} {
+    set neuron_file "${project_dir}/rtl/izhikevich/izhikevich_neuron.sv"
+    set layer_file  "${project_dir}/rtl/izhikevich/izhikevich_layer.sv"
+    set neuron_top  "izhikevich_neuron"
+    set layer_top   "izhikevich_layer"
+} elseif {$model eq "hodgkin_huxley"} {
+    set neuron_file "${project_dir}/rtl/hodgkin_huxley/hodgkin_huxley_neuron.sv"
+    set layer_file  "${project_dir}/rtl/hodgkin_huxley/hodgkin_huxley_layer.sv"
+    set neuron_top  "hodgkin_huxley_neuron"
+    set layer_top   "hodgkin_huxley_layer"
+} else {
+    error "Unknown MODEL=$model"
+}
+@file(run_genus.tcl) 28: if {$design_kind eq "neuron"} {
+    set top_module $neuron_top
+    set rtl_files [list $neuron_file]
+} elseif {$design_kind eq "layer"} {
+    set top_module $layer_top
+    set rtl_files [list $neuron_file $layer_file]
+} else {
+    error "DESIGN_KIND must be neuron or layer"
+}
+@file(run_genus.tcl) 38: set out_dir "${project_dir}/asic/genus/${model}/${design_kind}/${corner}"
+@file(run_genus.tcl) 39: set report_dir "${project_dir}/asic/reports/${model}/${design_kind}/${corner}"
+@file(run_genus.tcl) 41: file mkdir $out_dir
+@file(run_genus.tcl) 42: file mkdir $report_dir
+@file(run_genus.tcl) 44: foreach f $rtl_files {
+    if {![file exists $f] || [file size $f] == 0} {
+        error "RTL missing or empty: $f"
+    }
+}
+@file(run_genus.tcl) 49: if {![file exists $lib_file]} {
+    error "Liberty file missing: $lib_file"
+}
+@file(run_genus.tcl) 53: puts "INFO: MODEL=$model DESIGN_KIND=$design_kind CORNER=$corner"
+INFO: MODEL=izhikevich DESIGN_KIND=layer CORNER=typical
+@file(run_genus.tcl) 54: puts "INFO: TOP=$top_module"
+INFO: TOP=izhikevich_layer
+@file(run_genus.tcl) 56: set_db init_lib_search_path "${pdk_dir}/lib"
+  Setting attribute of root '/': 'init_lib_search_path' = /home/cadence/install/FOUNDRY/digital/90nm/dig/lib
+@file(run_genus.tcl) 57: read_libs $lib_file
+
+Threads Configured:3
+
+  Message Summary for Library typical.lib:
+  ****************************************
+  Missing a function attribute in the output pin definition. [LBR-518]: 1
+  Missing library level attribute. [LBR-516]: 1
+  ****************************************
+ 
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 1.000000, 25.000000) in library 'typical.lib'.
+        : The nominal operating condition is represented, either by the nominal PVT values specified in the library source (via nom_process,nom_voltage and nom_temperature respectively), or by the default PVT values (1.0,1.0,1.0).
+@file(run_genus.tcl) 58: read_hdl -sv $rtl_files
+@file(run_genus.tcl) 59: elaborate $top_module
+  Library has 324 usable logic and 128 usable sequential lib-cells.
+Info    : Elaborating Design. [ELAB-1]
+        : Elaborating top-level block 'izhikevich_layer' from file '/home/userdata/24bvd0198/snn_neuron_study/rtl/izhikevich/izhikevich_layer.sv'.
+Warning : Using default parameter value for module elaboration. [CDFG-818]
+        : Elaborating block 'izhikevich_layer' with default parameters value.
+Info    : Done Elaborating Design. [ELAB-3]
+        : Done elaborating 'izhikevich_layer'.
+Checking for analog nets...
+Check completed for analog nets.
+Checking for source RTL...
+Check completed for source RTL.
+Running Unified Mux Engine Tricks...
+Completed Unified Mux Engine Tricks
+
+Stage: post_elab
+--------------------------------------------------------
+| Trick             | Accepts | Rejects | Runtime (ms) | 
+--------------------------------------------------------
+| ume_constant_bmux |       0 |       0 |         1.00 | 
+--------------------------------------------------------
+Starting clip mux common data inputs [v1.0] (stage: post_elab, startdef: izhikevich_layer, recur: true)
+Completed clip mux common data inputs (accepts: 0, rejects: 0, runtime: 0.001s)
+Starting clip the non-user hierarchies [v2.0] (stage: post_elab, startdef: izhikevich_layer, recur: true)
+Completed clip the non-user hierarchies (accepts: 0, rejects: 0, runtime: 0.001s)
+
+Stage: post_elab
+---------------------------------------------------------
+| Transform          | Accepts | Rejects | Runtime (ms) | 
+---------------------------------------------------------
+| hlo_clip_mux_input |       0 |       0 |         1.00 | 
+| hlo_clip           |       0 |       0 |         1.00 | 
+---------------------------------------------------------
+UM:   flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:*                                                                   elaborate
+@file(run_genus.tcl) 60: check_design -unresolved
+
+
+ 	 Check Design Report (c)
+	 ------------------- 
+
+  Unresolved References & Empty Modules
+  ------------------------------------- 
+No unresolved references in design 'izhikevich_layer'
+
+No empty modules in design 'izhikevich_layer'
+
+  Done Checking the design.
+@file(run_genus.tcl) 62: syn_generic
+
+Stage: pre_early_cg
+------------------------------------------------
+| Transform | Accepts | Rejects | Runtime (ms) | 
+------------------------------------------------
+------------------------------------------------
+##Generic Timing Info for library domain: _default_ typical gate delay: 48.6 ps std_slew: 10.6 ps std_load: 7.4 fF
+Starting mux data reorder optimization [v1.0] (stage: pre_to_gen_setup, startdef: izhikevich_layer, recur: true)
+Completed mux data reorder optimization (accepts: 0, rejects: 0, runtime: 0.005s)
+
+Stage: pre_to_gen_setup
+------------------------------------------------------
+| Transform       | Accepts | Rejects | Runtime (ms) | 
+------------------------------------------------------
+| hlo_mux_reorder |       0 |       0 |         5.00 | 
+------------------------------------------------------
+Info    : Synthesizing. [SYNTH-1]
+        : Synthesizing 'izhikevich_layer' to generic gates using 'medium' effort.
+PBS_Generic-Start - Elapsed_Time 0, CPU_Time 0.0
+stamp 'PBS_Generic-Start' being created for table 'pbs_debug'
+
+  Total Time (Wall) |  Stage Time (Wall)  |   % (Wall)   |    Date - Time     |  Memory   | Stage
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:02:24(00:02:21) |  00:00:00(00:00:00) |   0.0(  0.0) |   13:46:42 (Oct27) |   1.89 GB | PBS_Generic-Start
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+Number of threads: 8 * 1   (id: pbs_debug, time_info v1.57)
+Info: (*N*) indicates data that was populated from previously saved time_info database
+Info: CPU time includes time of parent + longest thread
+TNS Restructuring config: no_value at stage: generic applied.
+Info    : Enabling Partition Based Synthesis. [PBS-1]
+        : Starting distributed generic optimization.
+Info    : Attempting to launch a super-threading server. [ST-120]
+        : Attempting to Launch server 1 of 8.
+        : The tool is entering super-threading mode and is launching a CPU server process.  This is enabled by the root attribute 'super_thread_servers' or 'auto_super_thread'.
+Info    : Connection established with super-threading server. [ST-110]
+        : The server 'localhost_1_0' is process '1955294' on this host.
+        : The tool is entering super-threading mode and has established a connection with a CPU server process.  This is enabled by the root attributes 'super_thread_servers' or 'auto_super_thread'.
+     Generating lib_script file: /home/userdata/24bvd0198/snn_neuron_study/.pbs_cadence-server.vit.ac.in_1931831/lib_script
+Start partitioning.  Summary: MEM {curr: 2.3G, peak: 2.4G, phys curr: 1.9G, phys peak: 1.9G}
+Start partitioning design izhikevich_layer for generic optimization.
+Total generic instances for partitioning: 1773632
+	Generic partition 0: size 110852
+	Generic partition 1: size 110852
+	Generic partition 2: size 110852
+	Generic partition 3: size 110852
+	Generic partition 4: size 110852
+	Generic partition 5: size 110852
+	Generic partition 6: size 110852
+	Generic partition 7: size 110852
+	Generic partition 8: size 110852
+	Generic partition 9: size 110852
+	Generic partition 10: size 110852
+	Generic partition 11: size 110852
+	Generic partition 12: size 110852
+	Generic partition 13: size 110852
+	Generic partition 14: size 110852
+	Generic partition 15: size 110852
+Done partitioning.  Summary: RT {elapsed: 1s, ST: 0s}, MEM {curr: 2.3G, peak: 2.4G, phys curr: 1.9G, phys peak: 1.9G}
+Start creating partition netlists.  Summary: MEM {curr: 2.3G, peak: 2.4G, phys curr: 1.9G, phys peak: 1.9G}
+Done creating partition netlists.  Summary: RT {elapsed: 16s, ST: 16s}, MEM {curr: 3.2G, peak: 3.2G, phys curr: 2.8G, phys peak: 2.8G}
+Start budgeting timing for partitions.  Summary: MEM {curr: 3.2G, peak: 3.2G, phys curr: 2.8G, phys peak: 2.8G}
+Done budgeting timing for partitions.  Summary: RT {elapsed: 71s, ST: 79s}, MEM {curr: 5.1G, peak: 5.1G, phys curr: 4.7G, phys peak: 4.7G}
+Start deriving partition netlists.  Summary: MEM {curr: 5.1G, peak: 5.1G, phys curr: 4.7G, phys peak: 4.7G}
+The inst 'pbs_genopt_0' is selected as pbs candidate. The instance cnt is: '110852'.
+The inst 'pbs_genopt_1' is selected as pbs candidate. The instance cnt is: '110852'.
+The inst 'pbs_genopt_2' is selected as pbs candidate. The instance cnt is: '110852'.
+The inst 'pbs_genopt_3' is selected as pbs candidate. The instance cnt is: '110852'.
+The inst 'pbs_genopt_4' is selected as pbs candidate. The instance cnt is: '110852'.
+The inst 'pbs_genopt_5' is selected as pbs candidate. The instance cnt is: '110852'.
+The inst 'pbs_genopt_6' is selected as pbs candidate. The instance cnt is: '110852'.
+The inst 'pbs_genopt_7' is selected as pbs candidate. The instance cnt is: '110852'.
+The inst 'pbs_genopt_8' is selected as pbs candidate. The instance cnt is: '110852'.
+The inst 'pbs_genopt_9' is selected as pbs candidate. The instance cnt is: '110852'.
+The inst 'pbs_genopt_10' is selected as pbs candidate. The instance cnt is: '110852'.
+The inst 'pbs_genopt_11' is selected as pbs candidate. The instance cnt is: '110852'.
+The inst 'pbs_genopt_12' is selected as pbs candidate. The instance cnt is: '110852'.
+The inst 'pbs_genopt_13' is selected as pbs candidate. The instance cnt is: '110852'.
+The inst 'pbs_genopt_14' is selected as pbs candidate. The instance cnt is: '110852'.
+The inst 'pbs_genopt_15' is selected as pbs candidate. The instance cnt is: '110852'.
+Done deriving partition netlists.  Summary: RT {elapsed: 16s, ST: 16s}, MEM {curr: 5.1G, peak: 5.2G, phys curr: 4.8G, phys peak: 4.8G}
+Wait for super-thread servers to finish loading libraries.
+Start super thread servers forking.  Summary: MEM {curr: 2.9G, peak: 5.2G, phys curr: 4.8G, phys peak: 4.8G}
+                  Library loading done successfully on server 'localhost_1_0'.
+Info    : Connection established with super-threading server. [ST-110]
+        : The server 'localhost_1_1' is forked process '1966671' on this host.
+Info    : Connection established with super-threading server. [ST-110]
+        : The server 'localhost_1_2' is forked process '1966742' on this host.
+Info    : Connection established with super-threading server. [ST-110]
+        : The server 'localhost_1_3' is forked process '1966800' on this host.
+Info    : Connection established with super-threading server. [ST-110]
+        : The server 'localhost_1_4' is forked process '1966871' on this host.
+Info    : Connection established with super-threading server. [ST-110]
+        : The server 'localhost_1_5' is forked process '1966921' on this host.
+Info    : Connection established with super-threading server. [ST-110]
+        : The server 'localhost_1_6' is forked process '1966931' on this host.
+Info    : Connection established with super-threading server. [ST-110]
+        : The server 'localhost_1_7' is forked process '1966934' on this host.
+Done super thread servers forking.  Summary: RT {elapsed: 0s, ST: 0s}, MEM {curr: 2.9G, peak: 5.2G, phys curr: 4.8G, phys peak: 4.8G}
+        Distributing super-thread jobs: {pbs_genopt_15 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_15.etf} {pbs_genopt_1 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_1.etf} {pbs_genopt_2 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_2.etf} {pbs_genopt_3 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_3.etf} {pbs_genopt_4 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_4.etf} {pbs_genopt_5 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_5.etf} {pbs_genopt_6 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_6.etf} {pbs_genopt_7 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_7.etf} {pbs_genopt_8 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_8.etf} {pbs_genopt_9 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_9.etf} {pbs_genopt_10 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_10.etf} {pbs_genopt_11 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_11.etf} {pbs_genopt_12 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_12.etf} {pbs_genopt_13 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_13.etf} {pbs_genopt_14 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_14.etf} {pbs_genopt_0 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_0.etf}
+          Sending 'pbs_genopt_15 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_15.etf' to server 'localhost_1_7'...
+            Sent 'pbs_genopt_15 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_15.etf' to server 'localhost_1_7'.
+          Sending 'pbs_genopt_1 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_1.etf' to server 'localhost_1_6'...
+            Sent 'pbs_genopt_1 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_1.etf' to server 'localhost_1_6'.
+          Sending 'pbs_genopt_2 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_2.etf' to server 'localhost_1_1'...
+            Sent 'pbs_genopt_2 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_2.etf' to server 'localhost_1_1'.
+          Sending 'pbs_genopt_3 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_3.etf' to server 'localhost_1_3'...
+            Sent 'pbs_genopt_3 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_3.etf' to server 'localhost_1_3'.
+          Sending 'pbs_genopt_4 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_4.etf' to server 'localhost_1_2'...
+            Sent 'pbs_genopt_4 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_4.etf' to server 'localhost_1_2'.
+          Sending 'pbs_genopt_5 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_5.etf' to server 'localhost_1_5'...
+            Sent 'pbs_genopt_5 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_5.etf' to server 'localhost_1_5'.
+          Sending 'pbs_genopt_6 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_6.etf' to server 'localhost_1_0'...
+            Sent 'pbs_genopt_6 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_6.etf' to server 'localhost_1_0'.
+          Sending 'pbs_genopt_7 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_7.etf' to server 'localhost_1_4'...
+            Sent 'pbs_genopt_7 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_7.etf' to server 'localhost_1_4'.
+          Received 'pbs_genopt_15 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_15.etf' from server 'localhost_1_7'. (179893 ms elapsed)
+          Sending 'pbs_genopt_8 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_8.etf' to server 'localhost_1_7'...
+            Sent 'pbs_genopt_8 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_8.etf' to server 'localhost_1_7'.
+          Received 'pbs_genopt_7 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_7.etf' from server 'localhost_1_4'. (181608 ms elapsed)
+       Partition:  pbs_genopt_7 - PBS_Generic_Opt-Distributed_Read_DB - Elapsed_Time 1.00, CPU_Time 1.00
+       Partition:  pbs_genopt_7 - PBS_Generic_Opt-Distributed_Generic - Elapsed_Time 166.00, CPU_Time 162.00
+       Partition:  pbs_genopt_7 - PBS_Generic_Opt-Distributed_Prop_Const - Elapsed_Time 10.00, CPU_Time 10.00
+       Partition:  pbs_genopt_7 - PBS_Generic_Opt-Distributed_Gobble - Elapsed_Time 1.00, CPU_Time 0.00
+       Partition:  pbs_genopt_7 - PBS_Generic_Opt-Distributed_Report - Elapsed_Time 0.00, CPU_Time 0.00
+       Start - Partition: pbs_genopt_7 Slack: inf TNS: 0.0 Cell-Count: 110852 Cell-Area: 795087 
+Init-Memory: 1000.48
+       Done  - Partition: pbs_genopt_7 Slack: inf TNS: 0.0 Cell-Count: 30177 Cell-Area: 256005 
+Peak-Memory: 1541.74 Elapsed: 178
+       Partition:  pbs_genopt_7 - PBS_Generic_Opt-Distributed_Write_DB - Elapsed_Time 4.00, CPU_Time 4.00
+       pbs_genopt_7 - PBS_Generic_Opt-Assembly - Elapsed_Time 2, CPU_Time 2.0
+       Partition:  pbs_genopt_7 - Runtime taken by the partition - Elapsed_Time 182.00, CPU_Time 177.00
+          Sending 'pbs_genopt_9 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_9.etf' to server 'localhost_1_4'...
+            Sent 'pbs_genopt_9 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_9.etf' to server 'localhost_1_4'.
+          Received 'pbs_genopt_5 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_5.etf' from server 'localhost_1_5'. (183639 ms elapsed)
+          Sending 'pbs_genopt_10 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_10.etf' to server 'localhost_1_5'...
+            Sent 'pbs_genopt_10 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_10.etf' to server 'localhost_1_5'.
+          Received 'pbs_genopt_4 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_4.etf' from server 'localhost_1_2'. (183640 ms elapsed)
+          Sending 'pbs_genopt_11 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_11.etf' to server 'localhost_1_2'...
+            Sent 'pbs_genopt_11 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_11.etf' to server 'localhost_1_2'.
+          Received 'pbs_genopt_2 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_2.etf' from server 'localhost_1_1'. (183641 ms elapsed)
+          Sending 'pbs_genopt_12 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_12.etf' to server 'localhost_1_1'...
+            Sent 'pbs_genopt_12 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_12.etf' to server 'localhost_1_1'.
+          Received 'pbs_genopt_1 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_1.etf' from server 'localhost_1_6'. (183641 ms elapsed)
+          Sending 'pbs_genopt_13 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_13.etf' to server 'localhost_1_6'...
+            Sent 'pbs_genopt_13 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_13.etf' to server 'localhost_1_6'.
+          Received 'pbs_genopt_6 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_6.etf' from server 'localhost_1_0'. (183641 ms elapsed)
+       Partition:  pbs_genopt_6 - PBS_Generic_Opt-Distributed_Read_DB - Elapsed_Time 1.00, CPU_Time 1.00
+       Partition:  pbs_genopt_6 - PBS_Generic_Opt-Distributed_Generic - Elapsed_Time 166.00, CPU_Time 163.00
+       Partition:  pbs_genopt_6 - PBS_Generic_Opt-Distributed_Prop_Const - Elapsed_Time 10.00, CPU_Time 10.00
+       Partition:  pbs_genopt_6 - PBS_Generic_Opt-Distributed_Gobble - Elapsed_Time 1.00, CPU_Time 0.00
+       Partition:  pbs_genopt_6 - PBS_Generic_Opt-Distributed_Report - Elapsed_Time 0.00, CPU_Time 0.00
+       Start - Partition: pbs_genopt_6 Slack: inf TNS: 0.0 Cell-Count: 110852 Cell-Area: 795087 
+Init-Memory: 1000.48
+       Done  - Partition: pbs_genopt_6 Slack: inf TNS: 0.0 Cell-Count: 30177 Cell-Area: 256005 
+Peak-Memory: 1544.19 Elapsed: 178
+       Partition:  pbs_genopt_6 - PBS_Generic_Opt-Distributed_Write_DB - Elapsed_Time 4.00, CPU_Time 4.00
+       pbs_genopt_6 - PBS_Generic_Opt-Assembly - Elapsed_Time 2, CPU_Time 2.0
+       Partition:  pbs_genopt_6 - Runtime taken by the partition - Elapsed_Time 182.00, CPU_Time 178.00
+       Partition:  pbs_genopt_5 - PBS_Generic_Opt-Distributed_Read_DB - Elapsed_Time 1.00, CPU_Time 1.00
+       Partition:  pbs_genopt_5 - PBS_Generic_Opt-Distributed_Generic - Elapsed_Time 165.00, CPU_Time 161.00
+       Partition:  pbs_genopt_5 - PBS_Generic_Opt-Distributed_Prop_Const - Elapsed_Time 10.00, CPU_Time 10.00
+       Partition:  pbs_genopt_5 - PBS_Generic_Opt-Distributed_Gobble - Elapsed_Time 0.00, CPU_Time 0.00
+       Partition:  pbs_genopt_5 - PBS_Generic_Opt-Distributed_Report - Elapsed_Time 0.00, CPU_Time 0.00
+       Start - Partition: pbs_genopt_5 Slack: inf TNS: 0.0 Cell-Count: 110852 Cell-Area: 795087 
+Init-Memory: 1000.48
+       Done  - Partition: pbs_genopt_5 Slack: inf TNS: 0.0 Cell-Count: 30177 Cell-Area: 256005 
+Peak-Memory: 1540.96 Elapsed: 176
+       Partition:  pbs_genopt_5 - PBS_Generic_Opt-Distributed_Write_DB - Elapsed_Time 5.00, CPU_Time 4.00
+       pbs_genopt_5 - PBS_Generic_Opt-Assembly - Elapsed_Time 2, CPU_Time 2.0
+       Partition:  pbs_genopt_5 - Runtime taken by the partition - Elapsed_Time 181.00, CPU_Time 176.00
+       Partition:  pbs_genopt_4 - PBS_Generic_Opt-Distributed_Read_DB - Elapsed_Time 1.00, CPU_Time 1.00
+       Partition:  pbs_genopt_4 - PBS_Generic_Opt-Distributed_Generic - Elapsed_Time 167.00, CPU_Time 163.00
+       Partition:  pbs_genopt_4 - PBS_Generic_Opt-Distributed_Prop_Const - Elapsed_Time 10.00, CPU_Time 10.00
+       Partition:  pbs_genopt_4 - PBS_Generic_Opt-Distributed_Gobble - Elapsed_Time 0.00, CPU_Time 0.00
+       Partition:  pbs_genopt_4 - PBS_Generic_Opt-Distributed_Report - Elapsed_Time 0.00, CPU_Time 0.00
+       Start - Partition: pbs_genopt_4 Slack: inf TNS: 0.0 Cell-Count: 110852 Cell-Area: 795087 
+Init-Memory: 1000.48
+       Done  - Partition: pbs_genopt_4 Slack: inf TNS: 0.0 Cell-Count: 30177 Cell-Area: 256005 
+Peak-Memory: 1542.74 Elapsed: 178
+       Partition:  pbs_genopt_4 - PBS_Generic_Opt-Distributed_Write_DB - Elapsed_Time 4.00, CPU_Time 4.00
+       pbs_genopt_4 - PBS_Generic_Opt-Assembly - Elapsed_Time 2, CPU_Time 2.0
+       Partition:  pbs_genopt_4 - Runtime taken by the partition - Elapsed_Time 182.00, CPU_Time 178.00
+          Sending 'pbs_genopt_14 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_14.etf' to server 'localhost_1_0'...
+            Sent 'pbs_genopt_14 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_14.etf' to server 'localhost_1_0'.
+          Received 'pbs_genopt_3 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_3.etf' from server 'localhost_1_3'. (189827 ms elapsed)
+       Partition:  pbs_genopt_3 - PBS_Generic_Opt-Distributed_Read_DB - Elapsed_Time 1.00, CPU_Time 1.00
+       Partition:  pbs_genopt_3 - PBS_Generic_Opt-Distributed_Generic - Elapsed_Time 168.00, CPU_Time 163.00
+       Partition:  pbs_genopt_3 - PBS_Generic_Opt-Distributed_Prop_Const - Elapsed_Time 10.00, CPU_Time 10.00
+       Partition:  pbs_genopt_3 - PBS_Generic_Opt-Distributed_Gobble - Elapsed_Time 0.00, CPU_Time 0.00
+       Partition:  pbs_genopt_3 - PBS_Generic_Opt-Distributed_Report - Elapsed_Time 0.00, CPU_Time 0.00
+       Start - Partition: pbs_genopt_3 Slack: inf TNS: 0.0 Cell-Count: 110852 Cell-Area: 795087 
+Init-Memory: 1000.48
+       Done  - Partition: pbs_genopt_3 Slack: inf TNS: 0.0 Cell-Count: 30177 Cell-Area: 256005 
+Peak-Memory: 1542.36 Elapsed: 179
+       Partition:  pbs_genopt_3 - PBS_Generic_Opt-Distributed_Write_DB - Elapsed_Time 5.00, CPU_Time 5.00
+       pbs_genopt_3 - PBS_Generic_Opt-Assembly - Elapsed_Time 2, CPU_Time 2.0
+       Partition:  pbs_genopt_3 - Runtime taken by the partition - Elapsed_Time 184.00, CPU_Time 179.00
+       Partition:  pbs_genopt_2 - PBS_Generic_Opt-Distributed_Read_DB - Elapsed_Time 1.00, CPU_Time 1.00
+       Partition:  pbs_genopt_2 - PBS_Generic_Opt-Distributed_Generic - Elapsed_Time 165.00, CPU_Time 161.00
+       Partition:  pbs_genopt_2 - PBS_Generic_Opt-Distributed_Prop_Const - Elapsed_Time 10.00, CPU_Time 9.00
+       Partition:  pbs_genopt_2 - PBS_Generic_Opt-Distributed_Gobble - Elapsed_Time 0.00, CPU_Time 0.00
+       Partition:  pbs_genopt_2 - PBS_Generic_Opt-Distributed_Report - Elapsed_Time 0.00, CPU_Time 0.00
+       Start - Partition: pbs_genopt_2 Slack: inf TNS: 0.0 Cell-Count: 110852 Cell-Area: 795087 
+Init-Memory: 1000.48
+       Done  - Partition: pbs_genopt_2 Slack: inf TNS: 0.0 Cell-Count: 30177 Cell-Area: 256005 
+Peak-Memory: 1543.22 Elapsed: 176
+       Partition:  pbs_genopt_2 - PBS_Generic_Opt-Distributed_Write_DB - Elapsed_Time 4.00, CPU_Time 4.00
+       pbs_genopt_2 - PBS_Generic_Opt-Assembly - Elapsed_Time 2, CPU_Time 2.0
+       Partition:  pbs_genopt_2 - Runtime taken by the partition - Elapsed_Time 180.00, CPU_Time 175.00
+       Partition:  pbs_genopt_1 - PBS_Generic_Opt-Distributed_Read_DB - Elapsed_Time 1.00, CPU_Time 1.00
+       Partition:  pbs_genopt_1 - PBS_Generic_Opt-Distributed_Generic - Elapsed_Time 167.00, CPU_Time 163.00
+       Partition:  pbs_genopt_1 - PBS_Generic_Opt-Distributed_Prop_Const - Elapsed_Time 9.00, CPU_Time 9.00
+       Partition:  pbs_genopt_1 - PBS_Generic_Opt-Distributed_Gobble - Elapsed_Time 0.00, CPU_Time 0.00
+       Partition:  pbs_genopt_1 - PBS_Generic_Opt-Distributed_Report - Elapsed_Time 0.00, CPU_Time 0.00
+       Start - Partition: pbs_genopt_1 Slack: inf TNS: 0.0 Cell-Count: 110852 Cell-Area: 795087 
+Init-Memory: 1000.48
+       Done  - Partition: pbs_genopt_1 Slack: inf TNS: 0.0 Cell-Count: 30177 Cell-Area: 256005 
+Peak-Memory: 1544.22 Elapsed: 177
+       Partition:  pbs_genopt_1 - PBS_Generic_Opt-Distributed_Write_DB - Elapsed_Time 5.00, CPU_Time 5.00
+       pbs_genopt_1 - PBS_Generic_Opt-Assembly - Elapsed_Time 3, CPU_Time 2.0
+       Partition:  pbs_genopt_1 - Runtime taken by the partition - Elapsed_Time 182.00, CPU_Time 178.00
+       Partition:  pbs_genopt_15 - PBS_Generic_Opt-Distributed_Read_DB - Elapsed_Time 1.00, CPU_Time 1.00
+       Partition:  pbs_genopt_15 - PBS_Generic_Opt-Distributed_Generic - Elapsed_Time 165.00, CPU_Time 161.00
+       Partition:  pbs_genopt_15 - PBS_Generic_Opt-Distributed_Prop_Const - Elapsed_Time 10.00, CPU_Time 9.00
+       Partition:  pbs_genopt_15 - PBS_Generic_Opt-Distributed_Gobble - Elapsed_Time 0.00, CPU_Time 0.00
+       Partition:  pbs_genopt_15 - PBS_Generic_Opt-Distributed_Report - Elapsed_Time 0.00, CPU_Time 0.00
+       Start - Partition: pbs_genopt_15 Slack: inf TNS: 0.0 Cell-Count: 110852 Cell-Area: 795087 
+Init-Memory: 1000.48
+       Done  - Partition: pbs_genopt_15 Slack: inf TNS: 0.0 Cell-Count: 30177 Cell-Area: 256005 
+Peak-Memory: 1542.74 Elapsed: 176
+       Partition:  pbs_genopt_15 - PBS_Generic_Opt-Distributed_Write_DB - Elapsed_Time 4.00, CPU_Time 4.00
+       pbs_genopt_15 - PBS_Generic_Opt-Assembly - Elapsed_Time 2, CPU_Time 3.0
+       Partition:  pbs_genopt_15 - Runtime taken by the partition - Elapsed_Time 180.00, CPU_Time 175.00
+          Sending 'pbs_genopt_0 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_0.etf' to server 'localhost_1_3'...
+            Sent 'pbs_genopt_0 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_0.etf' to server 'localhost_1_3'.
+          Received 'pbs_genopt_11 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_11.etf' from server 'localhost_1_2'. (179989 ms elapsed)
+          Received 'pbs_genopt_13 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_13.etf' from server 'localhost_1_6'. (182148 ms elapsed)
+          Received 'pbs_genopt_8 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_8.etf' from server 'localhost_1_7'. (185897 ms elapsed)
+       Partition:  pbs_genopt_8 - PBS_Generic_Opt-Distributed_Read_DB - Elapsed_Time 1.00, CPU_Time 0.00
+       Partition:  pbs_genopt_8 - PBS_Generic_Opt-Distributed_Generic - Elapsed_Time 168.00, CPU_Time 163.00
+       Partition:  pbs_genopt_8 - PBS_Generic_Opt-Distributed_Prop_Const - Elapsed_Time 11.00, CPU_Time 9.00
+       Partition:  pbs_genopt_8 - PBS_Generic_Opt-Distributed_Gobble - Elapsed_Time 0.00, CPU_Time 1.00
+       Partition:  pbs_genopt_8 - PBS_Generic_Opt-Distributed_Report - Elapsed_Time 0.00, CPU_Time 0.00
+       Start - Partition: pbs_genopt_8 Slack: inf TNS: 0.0 Cell-Count: 110852 Cell-Area: 795087 
+Init-Memory: 1542.74
+       Done  - Partition: pbs_genopt_8 Slack: inf TNS: 0.0 Cell-Count: 30177 Cell-Area: 256005 
+Peak-Memory: 1574.75 Elapsed: 180
+       Partition:  pbs_genopt_8 - PBS_Generic_Opt-Distributed_Write_DB - Elapsed_Time 4.00, CPU_Time 4.00
+       pbs_genopt_8 - PBS_Generic_Opt-Assembly - Elapsed_Time 2, CPU_Time 2.0
+       Partition:  pbs_genopt_8 - Runtime taken by the partition - Elapsed_Time 184.00, CPU_Time 177.00
+          Received 'pbs_genopt_12 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_12.etf' from server 'localhost_1_1'. (184212 ms elapsed)
+          Received 'pbs_genopt_10 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_10.etf' from server 'localhost_1_5'. (184213 ms elapsed)
+          Received 'pbs_genopt_9 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_9.etf' from server 'localhost_1_4'. (185940 ms elapsed)
+       Partition:  pbs_genopt_9 - PBS_Generic_Opt-Distributed_Read_DB - Elapsed_Time 1.00, CPU_Time 0.00
+       Partition:  pbs_genopt_9 - PBS_Generic_Opt-Distributed_Generic - Elapsed_Time 169.00, CPU_Time 162.00
+       Partition:  pbs_genopt_9 - PBS_Generic_Opt-Distributed_Prop_Const - Elapsed_Time 11.00, CPU_Time 11.00
+       Partition:  pbs_genopt_9 - PBS_Generic_Opt-Distributed_Gobble - Elapsed_Time 0.00, CPU_Time 0.00
+       Partition:  pbs_genopt_9 - PBS_Generic_Opt-Distributed_Report - Elapsed_Time 0.00, CPU_Time 0.00
+       Start - Partition: pbs_genopt_9 Slack: inf TNS: 0.0 Cell-Count: 110852 Cell-Area: 795087 
+Init-Memory: 1541.74
+       Done  - Partition: pbs_genopt_9 Slack: inf TNS: 0.0 Cell-Count: 30177 Cell-Area: 256005 
+Peak-Memory: 1573.75 Elapsed: 181
+       Partition:  pbs_genopt_9 - PBS_Generic_Opt-Distributed_Write_DB - Elapsed_Time 5.00, CPU_Time 5.00
+       pbs_genopt_9 - PBS_Generic_Opt-Assembly - Elapsed_Time 2, CPU_Time 2.0
+       Partition:  pbs_genopt_9 - Runtime taken by the partition - Elapsed_Time 186.00, CPU_Time 178.00
+       Partition:  pbs_genopt_10 - PBS_Generic_Opt-Distributed_Read_DB - Elapsed_Time 1.00, CPU_Time 0.00
+       Partition:  pbs_genopt_10 - PBS_Generic_Opt-Distributed_Generic - Elapsed_Time 166.00, CPU_Time 161.00
+       Partition:  pbs_genopt_10 - PBS_Generic_Opt-Distributed_Prop_Const - Elapsed_Time 10.00, CPU_Time 10.00
+       Partition:  pbs_genopt_10 - PBS_Generic_Opt-Distributed_Gobble - Elapsed_Time 0.00, CPU_Time 0.00
+       Partition:  pbs_genopt_10 - PBS_Generic_Opt-Distributed_Report - Elapsed_Time 0.00, CPU_Time 0.00
+       Start - Partition: pbs_genopt_10 Slack: inf TNS: 0.0 Cell-Count: 110852 Cell-Area: 795087 
+Init-Memory: 1540.96
+       Done  - Partition: pbs_genopt_10 Slack: inf TNS: 0.0 Cell-Count: 30177 Cell-Area: 256005 
+Peak-Memory: 1572.98 Elapsed: 177
+       Partition:  pbs_genopt_10 - PBS_Generic_Opt-Distributed_Write_DB - Elapsed_Time 5.00, CPU_Time 5.00
+       pbs_genopt_10 - PBS_Generic_Opt-Assembly - Elapsed_Time 2, CPU_Time 2.0
+       Partition:  pbs_genopt_10 - Runtime taken by the partition - Elapsed_Time 182.00, CPU_Time 176.00
+       Partition:  pbs_genopt_11 - PBS_Generic_Opt-Distributed_Read_DB - Elapsed_Time 0.00, CPU_Time 0.00
+       Partition:  pbs_genopt_11 - PBS_Generic_Opt-Distributed_Generic - Elapsed_Time 164.00, CPU_Time 159.00
+       Partition:  pbs_genopt_11 - PBS_Generic_Opt-Distributed_Prop_Const - Elapsed_Time 11.00, CPU_Time 10.00
+       Partition:  pbs_genopt_11 - PBS_Generic_Opt-Distributed_Gobble - Elapsed_Time 0.00, CPU_Time 0.00
+       Partition:  pbs_genopt_11 - PBS_Generic_Opt-Distributed_Report - Elapsed_Time 0.00, CPU_Time 0.00
+       Start - Partition: pbs_genopt_11 Slack: inf TNS: 0.0 Cell-Count: 110852 Cell-Area: 795087 
+Init-Memory: 1539.74
+       Done  - Partition: pbs_genopt_11 Slack: inf TNS: 0.0 Cell-Count: 30177 Cell-Area: 256005 
+Peak-Memory: 1571.75 Elapsed: 175
+       Partition:  pbs_genopt_11 - PBS_Generic_Opt-Distributed_Write_DB - Elapsed_Time 5.00, CPU_Time 4.00
+       pbs_genopt_11 - PBS_Generic_Opt-Assembly - Elapsed_Time 2, CPU_Time 2.0
+       Partition:  pbs_genopt_11 - Runtime taken by the partition - Elapsed_Time 180.00, CPU_Time 173.00
+       Partition:  pbs_genopt_12 - PBS_Generic_Opt-Distributed_Read_DB - Elapsed_Time 1.00, CPU_Time 1.00
+       Partition:  pbs_genopt_12 - PBS_Generic_Opt-Distributed_Generic - Elapsed_Time 166.00, CPU_Time 160.00
+       Partition:  pbs_genopt_12 - PBS_Generic_Opt-Distributed_Prop_Const - Elapsed_Time 11.00, CPU_Time 10.00
+       Partition:  pbs_genopt_12 - PBS_Generic_Opt-Distributed_Gobble - Elapsed_Time 0.00, CPU_Time 0.00
+       Partition:  pbs_genopt_12 - PBS_Generic_Opt-Distributed_Report - Elapsed_Time 0.00, CPU_Time 0.00
+       Start - Partition: pbs_genopt_12 Slack: inf TNS: 0.0 Cell-Count: 110852 Cell-Area: 795087 
+Init-Memory: 1543.22
+       Done  - Partition: pbs_genopt_12 Slack: inf TNS: 0.0 Cell-Count: 30177 Cell-Area: 256005 
+Peak-Memory: 1575.24 Elapsed: 178
+       Partition:  pbs_genopt_12 - PBS_Generic_Opt-Distributed_Write_DB - Elapsed_Time 4.00, CPU_Time 5.00
+       pbs_genopt_12 - PBS_Generic_Opt-Assembly - Elapsed_Time 2, CPU_Time 2.0
+       Partition:  pbs_genopt_12 - Runtime taken by the partition - Elapsed_Time 182.00, CPU_Time 176.00
+       Partition:  pbs_genopt_13 - PBS_Generic_Opt-Distributed_Read_DB - Elapsed_Time 0.00, CPU_Time 1.00
+       Partition:  pbs_genopt_13 - PBS_Generic_Opt-Distributed_Generic - Elapsed_Time 167.00, CPU_Time 161.00
+       Partition:  pbs_genopt_13 - PBS_Generic_Opt-Distributed_Prop_Const - Elapsed_Time 10.00, CPU_Time 10.00
+       Partition:  pbs_genopt_13 - PBS_Generic_Opt-Distributed_Gobble - Elapsed_Time 1.00, CPU_Time 0.00
+       Partition:  pbs_genopt_13 - PBS_Generic_Opt-Distributed_Report - Elapsed_Time 0.00, CPU_Time 0.00
+       Start - Partition: pbs_genopt_13 Slack: inf TNS: 0.0 Cell-Count: 110852 Cell-Area: 795087 
+Init-Memory: 1544.22
+       Done  - Partition: pbs_genopt_13 Slack: inf TNS: 0.0 Cell-Count: 30177 Cell-Area: 256005 
+Peak-Memory: 1576.24 Elapsed: 178
+       Partition:  pbs_genopt_13 - PBS_Generic_Opt-Distributed_Write_DB - Elapsed_Time 4.00, CPU_Time 4.00
+       pbs_genopt_13 - PBS_Generic_Opt-Assembly - Elapsed_Time 2, CPU_Time 2.0
+       Partition:  pbs_genopt_13 - Runtime taken by the partition - Elapsed_Time 182.00, CPU_Time 176.00
+          Received 'pbs_genopt_0 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_0.etf' from server 'localhost_1_3'. (181943 ms elapsed)
+          Received 'pbs_genopt_14 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_genopt_14.etf' from server 'localhost_1_0'. (190522 ms elapsed)
+       Partition:  pbs_genopt_14 - PBS_Generic_Opt-Distributed_Read_DB - Elapsed_Time 1.00, CPU_Time 1.00
+       Partition:  pbs_genopt_14 - PBS_Generic_Opt-Distributed_Generic - Elapsed_Time 168.00, CPU_Time 163.00
+       Partition:  pbs_genopt_14 - PBS_Generic_Opt-Distributed_Prop_Const - Elapsed_Time 11.00, CPU_Time 10.00
+       Partition:  pbs_genopt_14 - PBS_Generic_Opt-Distributed_Gobble - Elapsed_Time 0.00, CPU_Time 0.00
+       Partition:  pbs_genopt_14 - PBS_Generic_Opt-Distributed_Report - Elapsed_Time 0.00, CPU_Time 0.00
+       Start - Partition: pbs_genopt_14 Slack: inf TNS: 0.0 Cell-Count: 110852 Cell-Area: 795087 
+Init-Memory: 1544.19
+       Done  - Partition: pbs_genopt_14 Slack: inf TNS: 0.0 Cell-Count: 30177 Cell-Area: 256005 
+Peak-Memory: 1576.21 Elapsed: 180
+       Partition:  pbs_genopt_14 - PBS_Generic_Opt-Distributed_Write_DB - Elapsed_Time 4.00, CPU_Time 4.00
+       pbs_genopt_14 - PBS_Generic_Opt-Assembly - Elapsed_Time 2, CPU_Time 2.0
+       Partition:  pbs_genopt_14 - Runtime taken by the partition - Elapsed_Time 184.00, CPU_Time 178.00
+       Partition:  pbs_genopt_0 - PBS_Generic_Opt-Distributed_Read_DB - Elapsed_Time 0.00, CPU_Time 0.00
+       Partition:  pbs_genopt_0 - PBS_Generic_Opt-Distributed_Generic - Elapsed_Time 166.00, CPU_Time 160.00
+       Partition:  pbs_genopt_0 - PBS_Generic_Opt-Distributed_Prop_Const - Elapsed_Time 11.00, CPU_Time 10.00
+       Partition:  pbs_genopt_0 - PBS_Generic_Opt-Distributed_Gobble - Elapsed_Time 0.00, CPU_Time 0.00
+       Partition:  pbs_genopt_0 - PBS_Generic_Opt-Distributed_Report - Elapsed_Time 0.00, CPU_Time 0.00
+       Start - Partition: pbs_genopt_0 Slack: inf TNS: 0.0 Cell-Count: 110852 Cell-Area: 795087 
+Init-Memory: 1540.96
+       Done  - Partition: pbs_genopt_0 Slack: inf TNS: 0.0 Cell-Count: 30177 Cell-Area: 256005 
+Peak-Memory: 1572.98 Elapsed: 177
+       Partition:  pbs_genopt_0 - PBS_Generic_Opt-Distributed_Write_DB - Elapsed_Time 4.00, CPU_Time 5.00
+       pbs_genopt_0 - PBS_Generic_Opt-Assembly - Elapsed_Time 2, CPU_Time 2.0
+       Partition:  pbs_genopt_0 - Runtime taken by the partition - Elapsed_Time 181.00, CPU_Time 175.00
+Assembled design in-time
+
++-----------+-----------+-----+----------------------+---------------------------+
+|   Host    |  Machine  | CPU | Physical Memory (MB) | Peak Physical Memory (MB) |
++-----------+-----------+-----+----------------------+---------------------------+
+| localhost | localhost |  8  |        7241.1        |          7457.3           |
++-----------+-----------+-----+----------------------+---------------------------+
+
++---------------+----------------------+---------------------------+
+|    Server     | Physical Memory (MB) | Peak Physical Memory (MB) |
++---------------+----------------------+---------------------------+
+| localhost_1_0 |      5127.2 [1]      |        5501.1 [1]         |
+| localhost_1_1 |      642.4 [2]       |          [2] [3]          |
+| localhost_1_6 |      643.2 [2]       |          [2] [3]          |
+| localhost_1_7 |      640.9 [2]       |          [2] [3]          |
+| localhost_1_4 |      637.8 [2]       |          [2] [3]          |
+| localhost_1_5 |      641.2 [2]       |          [2] [3]          |
+| localhost_1_2 |      640.7 [2]       |          [2] [3]          |
+| localhost_1_3 |      641.4 [2]       |          [2] [3]          |
++---------------+----------------------+---------------------------+
+[1] Memory of child processes is included.
+[2] Memory is included in parent localhost_1_0.
+[3] Peak physical memory is not available for forked background servers.
+
+PBS_Generic-Post_Genopt - Elapsed_Time 542, CPU_Time 546.5567570000001
+stamp 'PBS_Generic-Post_Genopt' being created for table 'pbs_debug'
+
+  Total Time (Wall) |  Stage Time (Wall)  |   % (Wall)   |    Date - Time     |  Memory   | Stage
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:02:24(00:02:21) |  00:00:00(00:00:00) |   0.0(  0.0) |   13:46:42 (Oct27) |   1.89 GB | PBS_Generic-Start
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:11:30(00:11:24) |  00:09:06(00:09:03) | 100.0(100.0) |   13:55:45 (Oct27) |   2.82 GB | PBS_Generic-Post_Genopt
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+Number of threads: 8 * 1   (id: pbs_debug, time_info v1.57)
+Info: (*N*) indicates data that was populated from previously saved time_info database
+Info: CPU time includes time of parent + longest thread
+Updating ST server settings
+     Generating lib_script file: /home/userdata/24bvd0198/snn_neuron_study/.pbs_cadence-server.vit.ac.in_1931831/lib_script
+Start partitioning.  Summary: MEM {curr: 2.8G, peak: 5.2G, phys curr: 2.8G, phys peak: 7.3G}
+Start partitioning design izhikevich_layer for generic optimization.
+Total generic instances for partitioning: 482000
+	Generic partition 0: size 120500
+	Generic partition 1: size 90375
+	Generic partition 2: size 90375
+	Generic partition 3: size 90375
+	Generic partition 4: size 90375
+Done partitioning.  Summary: RT {elapsed: 0s, ST: 0s}, MEM {curr: 2.8G, peak: 5.2G, phys curr: 2.8G, phys peak: 7.3G}
+Start creating partition netlists.  Summary: MEM {curr: 2.8G, peak: 5.2G, phys curr: 2.8G, phys peak: 7.3G}
+Done creating partition netlists.  Summary: RT {elapsed: 5s, ST: 4s}, MEM {curr: 2.8G, peak: 5.2G, phys curr: 2.8G, phys peak: 7.3G}
+Start budgeting timing for partitions.  Summary: MEM {curr: 2.8G, peak: 5.2G, phys curr: 2.8G, phys peak: 7.3G}
+Done budgeting timing for partitions.  Summary: RT {elapsed: 17s, ST: 21s}, MEM {curr: 2.9G, peak: 5.2G, phys curr: 2.8G, phys peak: 7.3G}
+Start deriving partition netlists.  Summary: MEM {curr: 2.9G, peak: 5.2G, phys curr: 2.8G, phys peak: 7.3G}
+The inst 'pbs_fcopt_0' is selected as pbs candidate. The instance cnt is: '120500'.
+The inst 'pbs_fcopt_1' is selected as pbs candidate. The instance cnt is: '90375'.
+The inst 'pbs_fcopt_2' is selected as pbs candidate. The instance cnt is: '90375'.
+The inst 'pbs_fcopt_3' is selected as pbs candidate. The instance cnt is: '90375'.
+The inst 'pbs_fcopt_4' is selected as pbs candidate. The instance cnt is: '90375'.
+Done deriving partition netlists.  Summary: RT {elapsed: 9s, ST: 8s}, MEM {curr: 2.9G, peak: 5.2G, phys curr: 2.8G, phys peak: 7.3G}
+Wait for super-thread servers to finish loading libraries.
+Start super thread servers forking.  Summary: MEM {curr: 2.5G, peak: 5.2G, phys curr: 2.8G, phys peak: 7.3G}
+Info    : Connection established with super-threading server. [ST-110]
+        : The server 'localhost_1_8' is forked process '2037685' on this host.
+Info    : Connection established with super-threading server. [ST-110]
+        : The server 'localhost_1_9' is forked process '2037707' on this host.
+Info    : Connection established with super-threading server. [ST-110]
+        : The server 'localhost_1_10' is forked process '2037721' on this host.
+Info    : Connection established with super-threading server. [ST-110]
+        : The server 'localhost_1_11' is forked process '2037734' on this host.
+Info    : Connection established with super-threading server. [ST-110]
+        : The server 'localhost_1_12' is forked process '2037743' on this host.
+Info    : Connection established with super-threading server. [ST-110]
+        : The server 'localhost_1_13' is forked process '2037752' on this host.
+Info    : Connection established with super-threading server. [ST-110]
+        : The server 'localhost_1_14' is forked process '2037789' on this host.
+Done super thread servers forking.  Summary: RT {elapsed: 0s, ST: 0s}, MEM {curr: 2.5G, peak: 5.2G, phys curr: 2.8G, phys peak: 7.3G}
+        Distributing super-thread jobs: {pbs_fcopt_0 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_fcopt_0.etf} {pbs_fcopt_1 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_fcopt_1.etf} {pbs_fcopt_2 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_fcopt_2.etf} {pbs_fcopt_3 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_fcopt_3.etf} {pbs_fcopt_4 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_fcopt_4.etf}
+          Sending 'pbs_fcopt_0 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_fcopt_0.etf' to server 'localhost_1_14'...
+            Sent 'pbs_fcopt_0 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_fcopt_0.etf' to server 'localhost_1_14'.
+          Sending 'pbs_fcopt_1 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_fcopt_1.etf' to server 'localhost_1_8'...
+            Sent 'pbs_fcopt_1 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_fcopt_1.etf' to server 'localhost_1_8'.
+          Sending 'pbs_fcopt_2 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_fcopt_2.etf' to server 'localhost_1_10'...
+            Sent 'pbs_fcopt_2 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_fcopt_2.etf' to server 'localhost_1_10'.
+          Sending 'pbs_fcopt_3 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_fcopt_3.etf' to server 'localhost_1_13'...
+            Sent 'pbs_fcopt_3 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_fcopt_3.etf' to server 'localhost_1_13'.
+          Sending 'pbs_fcopt_4 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_fcopt_4.etf' to server 'localhost_1_9'...
+            Sent 'pbs_fcopt_4 ./.pbs_cadence-server.vit.ac.in_1931831/pbs_fcopt_4.etf' to server 'localhost_1_9'.

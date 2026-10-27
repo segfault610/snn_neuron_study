@@ -1,0 +1,22 @@
+xrun(64): 24.09-s005: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	24.09-s005: Started on Oct 27, 2026 at 15:46:36 IST
+xrun
+	-64bit
+	-sv
+	rtl/lif/lif_neuron.sv
+	rtl/lif/lif_layer.sv
+	tb/lif/tb_lif_layer.sv
+	-top tb_lif_layer
+	-access +rwc
+	-xmlibdirname /home/userdata/24bvd0198/snn_neuron_study/results/repair_20261027_135909/xcelium_lif_tb_lif_layer
+	-l /home/userdata/24bvd0198/snn_neuron_study/results/repair_20261027_135909/xrun_lif_tb_lif_layer.log
+	-run
+Loading snapshot worklib.tb_lif_layer:sv .................... Done
+xcelium> source /home/cadence/install_RB_8.7/XCELIUM2409/tools/xcelium/files/xmsimrc
+xcelium> run
+LIF layer: spikes=1111
+LIF layer: v0=0 v1=0 v2=0 v3=0
+Simulation complete via $finish(1) at time 140 NS + 0
+./tb/lif/tb_lif_layer.sv:46         $finish;
+xcelium> exit
+TOOL:	xrun(64)	24.09-s005: Exiting on Oct 27, 2026 at 15:46:40 IST  (total: 00:00:04)

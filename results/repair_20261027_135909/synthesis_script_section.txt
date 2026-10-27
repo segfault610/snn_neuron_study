@@ -1,0 +1,41 @@
+# PHASE 2: GENUS SYNTHESIS
+# 3 models x 2 design types x 3 corners = 18 runs
+# ============================================================
+
+if ! command -v genus >/dev/null 2>&1; then
+    echo "ERROR: genus not found; skipping synthesis phase."
+    printf 'SYNTHESIS_PHASE\tSKIPPED\t127\tgenus not found\n' >> "$SUMMARY"
+else
+    for model in lif izhikevich hodgkin_huxley; do
+        for kind in neuron layer; do
+            for corner in slow typical fast; do
+
+                export MODEL="$model"
+                export DESIGN_KIND="$kind"
+                export CORNER="$corner"
+
+                name="GENUS_${model}_${kind}_${corner}"
+                logfile="$RUN_DIR/${name}.log"
+
+                run_step "$name" "$logfile" \
+                    genus \
+                    -files "$PROJECT_DIR/asic/scripts/run_genus.tcl" \
+                    -log "$PROJECT_DIR/asic/logs/${name}.log"
+
+            done
+        done
+    done
+fi
+
+# ============================================================
+# PHASE 3: CONFORMAL LEC
+# Uses the generalized LEC dofile and each matching netlist.
+# ============================================================
+
+LEC_BIN=""
+
+if command -v lec >/dev/null 2>&1; then
+    LEC_BIN="$(command -v lec)"
+elif command -v conformal >/dev/null 2>&1; then
+    LEC_BIN="$(command -v conformal)"
+fi

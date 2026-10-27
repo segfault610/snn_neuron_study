@@ -1,0 +1,22 @@
+xrun(64): 24.09-s005: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	24.09-s005: Started on Oct 27, 2026 at 15:46:44 IST
+xrun
+	-64bit
+	-sv
+	rtl/hodgkin_huxley/hodgkin_huxley_neuron.sv
+	rtl/hodgkin_huxley/hodgkin_huxley_layer.sv
+	tb/hodgkin_huxley/tb_hodgkin_huxley_layer.sv
+	-top tb_hodgkin_huxley_layer
+	-access +rwc
+	-xmlibdirname /home/userdata/24bvd0198/snn_neuron_study/results/repair_20261027_135909/xcelium_hodgkin_huxley_tb_hodgkin_huxley_layer
+	-l /home/userdata/24bvd0198/snn_neuron_study/results/repair_20261027_135909/xrun_hodgkin_huxley_tb_hodgkin_huxley_layer.log
+	-run
+Loading snapshot worklib.tb_hodgkin_huxley_layer:sv .................... Done
+xcelium> source /home/cadence/install_RB_8.7/XCELIUM2409/tools/xcelium/files/xmsimrc
+xcelium> run
+HH layer: spikes=0000
+HH layer: v0=-55 v1=-49 v2=-42 v3=-35
+Simulation complete via $finish(1) at time 2020 NS + 0
+./tb/hodgkin_huxley/tb_hodgkin_huxley_layer.sv:46         $finish;
+xcelium> exit
+TOOL:	xrun(64)	24.09-s005: Exiting on Oct 27, 2026 at 15:46:48 IST  (total: 00:00:04)
