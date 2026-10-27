@@ -399,20 +399,20 @@
 "object":"/designs/lif_neuron/instances_seq/membrane_reg[18]",
 "type":"instance"},
 {"index": "1", 
- "date": "Tue Oct 27 06:48:19 UTC 2026",
- "seconds": 1793083699.4866629,
+ "date": "Tue Oct 27 07:21:47 UTC 2026",
+ "seconds": 1793085707.391924,
  "netlist": "fv/lif_neuron/fv_map.v.gz", 
  "netlist_exists": "1", 
  "netlist_normalize": "/home/userdata/24bvd0198/snn_neuron_study/fv/lif_neuron/fv_map.v.gz", 
- "netlist_mtime": "1793083698", 
- "netlist_timestamp": "Tue Oct 27 06:48:18 UTC 2026", 
- "netlist_size": "2187", 
- "netlist_cksum": "1521258245", 
+ "netlist_mtime": "1793085705", 
+ "netlist_timestamp": "Tue Oct 27 07:21:45 UTC 2026", 
+ "netlist_size": "2185", 
+ "netlist_cksum": "3326006050", 
  "design_name": "lif_neuron", 
  "synth_workdir": "/home/userdata/24bvd0198/snn_neuron_study", 
  "synthesis_command":"",
  "current_label": "fv_map", 
  "previous_label": "rtl", 
- "write_verif_file_runtime": 1.378843 
+ "write_verif_file_runtime": 1.880807 
  }
 ]

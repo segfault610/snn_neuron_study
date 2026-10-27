@@ -1,0 +1,6 @@
+/home/userdata/24bvd0198/snn_neuron_study/asic/genus/lif/typical/lif_tm_netlist.v
+/home/userdata/24bvd0198/snn_neuron_study/asic/genus/lif/typical/lif.sdc
+/home/userdata/24bvd0198/snn_neuron_study/asic/genus/lif/slow/lif_tm_netlist.v
+/home/userdata/24bvd0198/snn_neuron_study/asic/genus/lif/slow/lif.sdc
+/home/userdata/24bvd0198/snn_neuron_study/asic/genus/lif/fast/lif_tm_netlist.v
+/home/userdata/24bvd0198/snn_neuron_study/asic/genus/lif/fast/lif.sdc

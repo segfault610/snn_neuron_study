@@ -1,0 +1,17 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-64bit
+-sv
+rtl/izhikevich/izhikevich_neuron.sv
+tb/izhikevich/tb_izhikevich_neuron.sv
+-top
+tb_izhikevich_neuron
+-access
++rwc
+-l
+sim/logs/izhikevich_neuron.log
+-xmlibdirname
+sim/xcelium_izhikevich
+-run

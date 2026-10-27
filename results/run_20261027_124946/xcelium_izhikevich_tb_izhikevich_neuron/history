@@ -1,0 +1,5 @@
+//
+// File created by:  xrun
+// Do not modify this file
+
+s1::(27Oct2026:12:49:53):( xrun -64bit -sv rtl/izhikevich/izhikevich_neuron.sv tb/izhikevich/tb_izhikevich_neuron.sv -top tb_izhikevich_neuron -access +rwc -xmlibdirname /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/xcelium_izhikevich_tb_izhikevich_neuron -l /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/xrun_izhikevich_tb_izhikevich_neuron.log -run )&&(/home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/xcelium_izhikevich_tb_izhikevich_neuron/env.d/env.history.27Oct2026_12_49_53)

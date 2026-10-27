@@ -1,0 +1,24 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-amsdlibdir
+sim/xcelium_hodgkin_huxley/AMSD
+-RUN
+-MESSAGES
++EMGRLOG
+sim/logs/hodgkin_huxley_neuron.log
+-XLSTIME
+1793084422
+-XLKEEP
+-XLMODE
+sim/xcelium_hodgkin_huxley/run.lnx8664.24.09.d
+-RUNMODE
+-CDSLIB
+sim/xcelium_hodgkin_huxley/run.lnx8664.24.09.d/cds.lib
+-HDLVAR
+sim/xcelium_hodgkin_huxley/run.lnx8664.24.09.d/hdl.var
+-XLNAME
+xrun
+-XLVERSION
+"TOOL:	xrun(64)	24.09-s005"

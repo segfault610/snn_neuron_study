@@ -1,0 +1,24 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-amsdlibdir
+/home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/xcelium_lif_tb_lif_neuron/AMSD
+-RUN
+-MESSAGES
++EMGRLOG
+/home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/xrun_lif_tb_lif_neuron.log
+-XLSTIME
+1793085588
+-XLKEEP
+-XLMODE
+/home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/xcelium_lif_tb_lif_neuron/run.lnx8664.24.09.d
+-RUNMODE
+-CDSLIB
+/home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/xcelium_lif_tb_lif_neuron/run.lnx8664.24.09.d/cds.lib
+-HDLVAR
+/home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/xcelium_lif_tb_lif_neuron/run.lnx8664.24.09.d/hdl.var
+-XLNAME
+xrun
+-XLVERSION
+"TOOL:	xrun(64)	24.09-s005"

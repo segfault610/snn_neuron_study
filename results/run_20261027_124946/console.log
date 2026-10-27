@@ -1,0 +1,138 @@
+============================================================
+SNN NEURON STUDY: FULL EXECUTION
+============================================================
+Project : /home/userdata/24bvd0198/snn_neuron_study
+Run dir : /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946
+Started : Tue Oct 27 12:49:46 IST 2026
+
+Environment information saved.
+
+------------------------------------------------------------
+STEP: SIM_lif_tb_lif_neuron
+LOG : /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/SIM_lif_tb_lif_neuron.log
+CMD : xrun -64bit -sv rtl/lif/lif_neuron.sv tb/lif/tb_lif_neuron.sv -top tb_lif_neuron -access +rwc -xmlibdirname /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/xcelium_lif_tb_lif_neuron -l /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/xrun_lif_tb_lif_neuron.log -run
+------------------------------------------------------------
+RESULT: PASS (exit 0)
+
+------------------------------------------------------------
+STEP: SIM_izhikevich_tb_izhikevich_neuron
+LOG : /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/SIM_izhikevich_tb_izhikevich_neuron.log
+CMD : xrun -64bit -sv rtl/izhikevich/izhikevich_neuron.sv tb/izhikevich/tb_izhikevich_neuron.sv -top tb_izhikevich_neuron -access +rwc -xmlibdirname /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/xcelium_izhikevich_tb_izhikevich_neuron -l /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/xrun_izhikevich_tb_izhikevich_neuron.log -run
+------------------------------------------------------------
+RESULT: PASS (exit 0)
+
+------------------------------------------------------------
+STEP: SIM_hodgkin_huxley_tb_hodgkin_huxley_neuron
+LOG : /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/SIM_hodgkin_huxley_tb_hodgkin_huxley_neuron.log
+CMD : xrun -64bit -sv rtl/hodgkin_huxley/hodgkin_huxley_neuron.sv tb/hodgkin_huxley/tb_hodgkin_huxley_neuron.sv -top tb_hodgkin_huxley_neuron -access +rwc -xmlibdirname /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/xcelium_hodgkin_huxley_tb_hodgkin_huxley_neuron -l /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/xrun_hodgkin_huxley_tb_hodgkin_huxley_neuron.log -run
+------------------------------------------------------------
+RESULT: PASS (exit 0)
+
+------------------------------------------------------------
+STEP: SIM_lif_tb_lif_layer
+LOG : /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/SIM_lif_tb_lif_layer.log
+CMD : xrun -64bit -sv rtl/lif/lif_layer.sv tb/lif/tb_lif_layer.sv -top tb_lif_layer -access +rwc -xmlibdirname /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/xcelium_lif_tb_lif_layer -l /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/xrun_lif_tb_lif_layer.log -run
+------------------------------------------------------------
+RESULT: FAIL (exit 1)
+---- Last 30 lines of log ----
+TOOL:	xrun(64)	24.09-s005: Started on Oct 27, 2026 at 12:50:01 IST
+xrun(64): 24.09-s005: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+file: rtl/lif/lif_layer.sv
+	module worklib.lif_layer:sv
+		errors: 0, warnings: 0
+file: tb/lif/tb_lif_layer.sv
+	module worklib.tb_lif_layer:sv
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		tb_lif_layer
+            ) u_neuron (
+                     |
+xmelab: *E,CUVMUR (./rtl/lif/lif_layer.sv,24|21): instance 'tb_lif_layer.dut@lif_layer<module>.GEN_LIF[0].u_neuron' of design unit 'lif_neuron' is unresolved in 'worklib.lif_layer:sv'.
+xrun: *E,ELBERR: Error (*E) or soft error (*SE) occurred during elaboration (status 1), exiting.
+TOOL:	xrun(64)	24.09-s005: Exiting on Oct 27, 2026 at 12:50:02 IST  (total: 00:00:01)
+
+------------------------------------------------------------
+STEP: SIM_izhikevich_tb_izhikevich_layer
+LOG : /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/SIM_izhikevich_tb_izhikevich_layer.log
+CMD : xrun -64bit -sv rtl/izhikevich/izhikevich_layer.sv tb/izhikevich/tb_izhikevich_layer.sv -top tb_izhikevich_layer -access +rwc -xmlibdirname /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/xcelium_izhikevich_tb_izhikevich_layer -l /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/xrun_izhikevich_tb_izhikevich_layer.log -run
+------------------------------------------------------------
+RESULT: FAIL (exit 1)
+---- Last 30 lines of log ----
+TOOL:	xrun(64)	24.09-s005: Started on Oct 27, 2026 at 12:50:02 IST
+xrun(64): 24.09-s005: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+file: rtl/izhikevich/izhikevich_layer.sv
+	module worklib.izhikevich_layer:sv
+		errors: 0, warnings: 0
+file: tb/izhikevich/tb_izhikevich_layer.sv
+	module worklib.tb_izhikevich_layer:sv
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		tb_izhikevich_layer
+            ) u_neuron (
+                     |
+xmelab: *E,CUVMUR (./rtl/izhikevich/izhikevich_layer.sv,24|21): instance 'tb_izhikevich_layer.dut@izhikevich_layer<module>.GEN_IZH[0].u_neuron' of design unit 'izhikevich_neuron' is unresolved in 'worklib.izhikevich_layer:sv'.
+xrun: *E,ELBERR: Error (*E) or soft error (*SE) occurred during elaboration (status 1), exiting.
+TOOL:	xrun(64)	24.09-s005: Exiting on Oct 27, 2026 at 12:50:02 IST  (total: 00:00:00)
+
+------------------------------------------------------------
+STEP: SIM_hodgkin_huxley_tb_hodgkin_huxley_layer
+LOG : /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/SIM_hodgkin_huxley_tb_hodgkin_huxley_layer.log
+CMD : xrun -64bit -sv rtl/hodgkin_huxley/hodgkin_huxley_layer.sv tb/hodgkin_huxley/tb_hodgkin_huxley_layer.sv -top tb_hodgkin_huxley_layer -access +rwc -xmlibdirname /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/xcelium_hodgkin_huxley_tb_hodgkin_huxley_layer -l /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/xrun_hodgkin_huxley_tb_hodgkin_huxley_layer.log -run
+------------------------------------------------------------
+RESULT: FAIL (exit 1)
+---- Last 30 lines of log ----
+TOOL:	xrun(64)	24.09-s005: Started on Oct 27, 2026 at 12:50:03 IST
+xrun(64): 24.09-s005: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+file: rtl/hodgkin_huxley/hodgkin_huxley_layer.sv
+	module worklib.hodgkin_huxley_layer:sv
+		errors: 0, warnings: 0
+file: tb/hodgkin_huxley/tb_hodgkin_huxley_layer.sv
+	module worklib.tb_hodgkin_huxley_layer:sv
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		tb_hodgkin_huxley_layer
+            ) u_neuron (
+                     |
+xmelab: *E,CUVMUR (./rtl/hodgkin_huxley/hodgkin_huxley_layer.sv,24|21): instance 'tb_hodgkin_huxley_layer.dut@hodgkin_huxley_layer<module>.GEN_HH[0].u_neuron' of design unit 'hodgkin_huxley_neuron' is unresolved in 'worklib.hodgkin_huxley_layer:sv'.
+xrun: *E,ELBERR: Error (*E) or soft error (*SE) occurred during elaboration (status 1), exiting.
+TOOL:	xrun(64)	24.09-s005: Exiting on Oct 27, 2026 at 12:50:03 IST  (total: 00:00:00)
+
+------------------------------------------------------------
+STEP: GENUS_lif_neuron_slow
+LOG : /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/GENUS_lif_neuron_slow.log
+CMD : genus -files /home/userdata/24bvd0198/snn_neuron_study/asic/scripts/run_genus.tcl -log /home/userdata/24bvd0198/snn_neuron_study/asic/logs/GENUS_lif_neuron_slow.log
+------------------------------------------------------------
+RESULT: PASS (exit 0)
+
+------------------------------------------------------------
+STEP: GENUS_lif_neuron_typical
+LOG : /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/GENUS_lif_neuron_typical.log
+CMD : genus -files /home/userdata/24bvd0198/snn_neuron_study/asic/scripts/run_genus.tcl -log /home/userdata/24bvd0198/snn_neuron_study/asic/logs/GENUS_lif_neuron_typical.log
+------------------------------------------------------------
+RESULT: PASS (exit 0)
+
+------------------------------------------------------------
+STEP: GENUS_lif_neuron_fast
+LOG : /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/GENUS_lif_neuron_fast.log
+CMD : genus -files /home/userdata/24bvd0198/snn_neuron_study/asic/scripts/run_genus.tcl -log /home/userdata/24bvd0198/snn_neuron_study/asic/logs/GENUS_lif_neuron_fast.log
+------------------------------------------------------------
+RESULT: PASS (exit 0)
+
+------------------------------------------------------------
+STEP: GENUS_lif_layer_slow
+LOG : /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/GENUS_lif_layer_slow.log
+CMD : genus -files /home/userdata/24bvd0198/snn_neuron_study/asic/scripts/run_genus.tcl -log /home/userdata/24bvd0198/snn_neuron_study/asic/logs/GENUS_lif_layer_slow.log
+------------------------------------------------------------
+RESULT: PASS (exit 0)
+
+------------------------------------------------------------
+STEP: GENUS_lif_layer_typical
+LOG : /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/GENUS_lif_layer_typical.log
+CMD : genus -files /home/userdata/24bvd0198/snn_neuron_study/asic/scripts/run_genus.tcl -log /home/userdata/24bvd0198/snn_neuron_study/asic/logs/GENUS_lif_layer_typical.log
+------------------------------------------------------------

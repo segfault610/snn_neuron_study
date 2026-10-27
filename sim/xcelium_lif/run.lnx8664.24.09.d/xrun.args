@@ -1,0 +1,17 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-64bit
+-sv
+rtl/lif/lif_neuron.sv
+tb/lif/tb_lif_neuron.sv
+-top
+tb_lif_neuron
+-access
++rwc
+-l
+sim/logs/lif_neuron.log
+-xmlibdirname
+sim/xcelium_lif
+-run

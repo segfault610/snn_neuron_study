@@ -1,0 +1,9 @@
+/home/userdata/24bvd0198/snn_neuron_study/asic/reports/lif/typical/area.rpt
+/home/userdata/24bvd0198/snn_neuron_study/asic/reports/lif/typical/timing.rpt
+/home/userdata/24bvd0198/snn_neuron_study/asic/reports/lif/typical/power.rpt
+/home/userdata/24bvd0198/snn_neuron_study/asic/reports/lif/slow/area.rpt
+/home/userdata/24bvd0198/snn_neuron_study/asic/reports/lif/slow/timing.rpt
+/home/userdata/24bvd0198/snn_neuron_study/asic/reports/lif/slow/power.rpt
+/home/userdata/24bvd0198/snn_neuron_study/asic/reports/lif/fast/area.rpt
+/home/userdata/24bvd0198/snn_neuron_study/asic/reports/lif/fast/timing.rpt
+/home/userdata/24bvd0198/snn_neuron_study/asic/reports/lif/fast/power.rpt

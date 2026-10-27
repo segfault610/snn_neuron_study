@@ -1,0 +1,4 @@
+STEP	STATUS	EXIT_CODE	LOG
+SIMULATION_PHASE	SKIPPED	127	xrun not found
+SYNTHESIS_PHASE	SKIPPED	127	genus not found
+LEC_PHASE	SKIPPED	127	Conformal executable not found

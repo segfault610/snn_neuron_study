@@ -1,0 +1,294 @@
+2026/10/27 12:53:56 WARNING This OS does not appear to be a Cadence supported Linux configuration.
+2026/10/27 12:53:56 For more info, please run CheckSysConf in <cdsRoot/tools.lnx86/bin/checkSysConf <productId>
+TMPDIR is being set to /tmp/genus_temp_1478286_cadence-server.vit.ac.in_24bvd0198_SEkam7
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2022 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[12:53:57.427962] Configured Lic search path (21.01-s002): 5280@14.139.1.126:1717@14.139.1.126
+
+Version: 21.14-s082_1, built Thu Jun 23 02:02:08 PDT 2022
+Options: -files /home/userdata/24bvd0198/snn_neuron_study/asic/scripts/run_genus.tcl -log /home/userdata/24bvd0198/snn_neuron_study/asic/logs/GENUS_lif_layer_typical.log 
+Date:    Tue Oct 27 12:53:57 2026
+Host:    cadence-server.vit.ac.in (x86_64 w/Linux 4.18.0-477.21.1.el8_8.x86_64) (16cores*32cpus*1physical cpu*Intel(R) Xeon(R) Gold 6346 CPU @ 3.10GHz 36864KB) (1055760632KB)
+PID:     1478286
+OS:      Red Hat Enterprise Linux release 8.8 (Ootpa)
+
+WARNING:Hostname to IPv4 and IPv6 address lookup failed for the host cadence-c2s
+WARNING:Hostname to IPv4 and IPv6 address lookup failed for the host cadence-c2s
+Checkout succeeded: Genus_Synthesis/3FFB3787901511A9760E
+	License file: 5280@14.139.1.126
+	License Server: 5280@14.139.1.126
+
+[12:53:59.105938] Periodic Lic check successful
+[12:53:59.105954] Feature usage summary:
+[12:53:59.105955] Genus_Synthesis
+Checking out license: Genus_Synthesis
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Loading tool scripts...WARNING:Hostname to IPv4 and IPv6 address lookup failed for the host cadence-c2s
+
+Finished loading tool scripts (13 seconds elapsed).
+
+#@ Processing -files option
+@genus 1> source /home/userdata/24bvd0198/snn_neuron_study/asic/scripts/run_genus.tcl
+#@ Begin verbose source /home/userdata/24bvd0198/snn_neuron_study/asic/scripts/run_genus.tcl
+@file(run_genus.tcl) 1: set project_dir $::env(PROJECT_DIR)
+@file(run_genus.tcl) 2: set model       $::env(MODEL)
+@file(run_genus.tcl) 3: set corner      $::env(CORNER)
+@file(run_genus.tcl) 4: set design_kind $::env(DESIGN_KIND)
+@file(run_genus.tcl) 6: set pdk_dir "/home/cadence/install/FOUNDRY/digital/90nm/dig"
+@file(run_genus.tcl) 7: set lib_file "${pdk_dir}/lib/${corner}.lib"
+@file(run_genus.tcl) 9: if {$model eq "lif"} {
+    set neuron_file "${project_dir}/rtl/lif/lif_neuron.sv"
+    set layer_file  "${project_dir}/rtl/lif/lif_layer.sv"
+    set neuron_top  "lif_neuron"
+    set layer_top   "lif_layer"
+} elseif {$model eq "izhikevich"} {
+    set neuron_file "${project_dir}/rtl/izhikevich/izhikevich_neuron.sv"
+    set layer_file  "${project_dir}/rtl/izhikevich/izhikevich_layer.sv"
+    set neuron_top  "izhikevich_neuron"
+    set layer_top   "izhikevich_layer"
+} elseif {$model eq "hodgkin_huxley"} {
+    set neuron_file "${project_dir}/rtl/hodgkin_huxley/hodgkin_huxley_neuron.sv"
+    set layer_file  "${project_dir}/rtl/hodgkin_huxley/hodgkin_huxley_layer.sv"
+    set neuron_top  "hodgkin_huxley_neuron"
+    set layer_top   "hodgkin_huxley_layer"
+} else {
+    error "Unknown MODEL=$model"
+}
+@file(run_genus.tcl) 28: if {$design_kind eq "neuron"} {
+    set top_module $neuron_top
+    set rtl_files [list $neuron_file]
+} elseif {$design_kind eq "layer"} {
+    set top_module $layer_top
+    set rtl_files [list $neuron_file $layer_file]
+} else {
+    error "DESIGN_KIND must be neuron or layer"
+}
+@file(run_genus.tcl) 38: set out_dir "${project_dir}/asic/genus/${model}/${design_kind}/${corner}"
+@file(run_genus.tcl) 39: set report_dir "${project_dir}/asic/reports/${model}/${design_kind}/${corner}"
+@file(run_genus.tcl) 41: file mkdir $out_dir
+@file(run_genus.tcl) 42: file mkdir $report_dir
+@file(run_genus.tcl) 44: foreach f $rtl_files {
+    if {![file exists $f] || [file size $f] == 0} {
+        error "RTL missing or empty: $f"
+    }
+}
+@file(run_genus.tcl) 49: if {![file exists $lib_file]} {
+    error "Liberty file missing: $lib_file"
+}
+@file(run_genus.tcl) 53: puts "INFO: MODEL=$model DESIGN_KIND=$design_kind CORNER=$corner"
+INFO: MODEL=lif DESIGN_KIND=layer CORNER=typical
+@file(run_genus.tcl) 54: puts "INFO: TOP=$top_module"
+INFO: TOP=lif_layer
+@file(run_genus.tcl) 56: set_db init_lib_search_path "${pdk_dir}/lib"
+  Setting attribute of root '/': 'init_lib_search_path' = /home/cadence/install/FOUNDRY/digital/90nm/dig/lib
+@file(run_genus.tcl) 57: read_libs $lib_file
+
+Threads Configured:3
+
+  Message Summary for Library typical.lib:
+  ****************************************
+  Missing a function attribute in the output pin definition. [LBR-518]: 1
+  Missing library level attribute. [LBR-516]: 1
+  ****************************************
+ 
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 1.000000, 25.000000) in library 'typical.lib'.
+        : The nominal operating condition is represented, either by the nominal PVT values specified in the library source (via nom_process,nom_voltage and nom_temperature respectively), or by the default PVT values (1.0,1.0,1.0).
+@file(run_genus.tcl) 58: read_hdl -sv $rtl_files
+@file(run_genus.tcl) 59: elaborate $top_module
+  Library has 324 usable logic and 128 usable sequential lib-cells.
+Info    : Elaborating Design. [ELAB-1]
+        : Elaborating top-level block 'lif_layer' from file '/home/userdata/24bvd0198/snn_neuron_study/rtl/lif/lif_layer.sv'.
+Warning : Using default parameter value for module elaboration. [CDFG-818]
+        : Elaborating block 'lif_layer' with default parameters value.
+Info    : Done Elaborating Design. [ELAB-3]
+        : Done elaborating 'lif_layer'.
+Checking for analog nets...
+Check completed for analog nets.
+Checking for source RTL...
+Check completed for source RTL.
+Running Unified Mux Engine Tricks...
+Completed Unified Mux Engine Tricks
+
+Stage: post_elab
+--------------------------------------------------------
+| Trick             | Accepts | Rejects | Runtime (ms) | 
+--------------------------------------------------------
+| ume_constant_bmux |       0 |       0 |         0.00 | 
+--------------------------------------------------------
+Starting clip mux common data inputs [v1.0] (stage: post_elab, startdef: lif_layer, recur: true)
+Completed clip mux common data inputs (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting clip the non-user hierarchies [v2.0] (stage: post_elab, startdef: lif_layer, recur: true)
+Completed clip the non-user hierarchies (accepts: 0, rejects: 0, runtime: 0.000s)
+
+Stage: post_elab
+---------------------------------------------------------
+| Transform          | Accepts | Rejects | Runtime (ms) | 
+---------------------------------------------------------
+| hlo_clip_mux_input |       0 |       0 |         0.00 | 
+| hlo_clip           |       0 |       0 |         0.00 | 
+---------------------------------------------------------
+UM:   flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:*                                                                   elaborate
+@file(run_genus.tcl) 60: check_design -unresolved
+
+
+ 	 Check Design Report (c)
+	 ------------------- 
+
+  Unresolved References & Empty Modules
+  ------------------------------------- 
+No unresolved references in design 'lif_layer'
+
+No empty modules in design 'lif_layer'
+
+  Done Checking the design.
+@file(run_genus.tcl) 62: syn_generic
+
+Stage: pre_early_cg
+------------------------------------------------
+| Transform | Accepts | Rejects | Runtime (ms) | 
+------------------------------------------------
+------------------------------------------------
+##Generic Timing Info for library domain: _default_ typical gate delay: 48.6 ps std_slew: 10.6 ps std_load: 7.4 fF
+Starting mux data reorder optimization [v1.0] (stage: pre_to_gen_setup, startdef: lif_layer, recur: true)
+Completed mux data reorder optimization (accepts: 0, rejects: 0, runtime: 0.000s)
+
+Stage: pre_to_gen_setup
+------------------------------------------------------
+| Transform       | Accepts | Rejects | Runtime (ms) | 
+------------------------------------------------------
+| hlo_mux_reorder |       0 |       0 |         0.00 | 
+------------------------------------------------------
+Info    : Synthesizing. [SYNTH-1]
+        : Synthesizing 'lif_layer' to generic gates using 'medium' effort.
+PBS_Generic-Start - Elapsed_Time 0, CPU_Time 0.0
+stamp 'PBS_Generic-Start' being created for table 'pbs_debug'
+
+  Total Time (Wall) |  Stage Time (Wall)  |   % (Wall)   |    Date - Time     |  Memory   | Stage
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:14(00:00:10) |  00:00:00(00:00:00) |   0.0(  0.0) |   12:54:15 (Oct27) |  302.3 MB | PBS_Generic-Start
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+Number of threads: 8 * 1   (id: pbs_debug, time_info v1.57)
+Info: (*N*) indicates data that was populated from previously saved time_info database
+Info: CPU time includes time of parent + longest thread
+TNS Restructuring config: no_value at stage: generic applied.
+Info    : Partition Based Synthesis execution skipped. [PHYS-752]
+        : Design size is less than the partition size '100000' for distributed generic optimization to kick in.
+Starting mux data reorder optimization [v1.0] (stage: pre_to_gen_setup, startdef: lif_layer, recur: true)
+Completed mux data reorder optimization (accepts: 0, rejects: 0, runtime: 0.004s)
+
+Stage: pre_to_gen_setup
+------------------------------------------------------
+| Transform       | Accepts | Rejects | Runtime (ms) | 
+------------------------------------------------------
+| hlo_mux_reorder |       0 |       0 |         4.00 | 
+------------------------------------------------------
+Starting mux data reorder optimization [v1.0] (stage: post_to_gen_setup, startdef: lif_layer, recur: true)
+Completed mux data reorder optimization (accepts: 0, rejects: 0, runtime: 0.001s)
+
+Stage: post_to_gen_setup
+------------------------------------------------------
+| Transform       | Accepts | Rejects | Runtime (ms) | 
+------------------------------------------------------
+| hlo_mux_reorder |       0 |       0 |         1.00 | 
+------------------------------------------------------
+Running Unified Mux Engine Tricks...
+Completed Unified Mux Engine Tricks
+
+Stage: pre_hlo_rtlopt
+--------------------------------------------
+| Trick | Accepts | Rejects | Runtime (ms) | 
+--------------------------------------------
+--------------------------------------------
+Starting infer macro optimization [v1.0] (stage: pre_rtlopt, startdef: lif_layer, recur: true)
+Completed infer macro optimization (accepts: 0, rejects: 2, runtime: 0.024s)
+Starting decode mux sandwich optimization [v2.0] (stage: pre_rtlopt, startdef: lif_layer, recur: true)
+Completed decode mux sandwich optimization (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting decode mux optimization [v1.0] (stage: pre_rtlopt, startdef: lif_layer, recur: true)
+Completed decode mux optimization (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting chop wide muxes [v1.0] (stage: pre_rtlopt, startdef: lif_layer, recur: true)
+Completed chop wide muxes (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting common data mux cascade opt [v1.0] (stage: pre_rtlopt, startdef: lif_layer, recur: true)
+Completed common data mux cascade opt (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting mux input consolidation [v1.0] (stage: pre_rtlopt, startdef: lif_layer, recur: true)
+Completed mux input consolidation (accepts: 0, rejects: 0, runtime: 0.001s)
+Starting constant-data mux optimization [v1.0] (stage: pre_rtlopt, startdef: lif_layer, recur: true)
+Completed constant-data mux optimization (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting chain-to-tree inequality transform [v2.0] (stage: pre_rtlopt, startdef: lif_layer, recur: true)
+Completed chain-to-tree inequality transform (accepts: 0, rejects: 0, runtime: 0.023s)
+Starting reconvergence optimization [v1.0] (stage: pre_rtlopt, startdef: lif_layer, recur: true)
+Completed reconvergence optimization (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting logic restructure optimization [v1.0] (stage: pre_rtlopt, startdef: lif_layer, recur: true)
+Completed logic restructure optimization (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting common select mux optimization [v1.0] (stage: pre_rtlopt, startdef: lif_layer, recur: true)
+Completed common select mux optimization (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting identity transform [v3.0] (stage: pre_rtlopt, startdef: lif_layer, recur: true)
+Completed identity transform (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting reduce operator chain [v1.0] (stage: pre_rtlopt, startdef: lif_layer, recur: true)
+Completed reduce operator chain (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting common data mux cascade opt [v1.0] (stage: pre_rtlopt, startdef: lif_layer, recur: true)
+Completed common data mux cascade opt (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting mux input consolidation [v1.0] (stage: pre_rtlopt, startdef: lif_layer, recur: true)
+Completed mux input consolidation (accepts: 0, rejects: 0, runtime: 0.001s)
+Starting optimize datapath elements [v1.0] (stage: pre_rtlopt, startdef: lif_layer, recur: true)
+Completed optimize datapath elements (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting datapath recasting [v1.0] (stage: pre_rtlopt, startdef: lif_layer, recur: true)
+Completed datapath recasting (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting clip mux common data inputs [v1.0] (stage: pre_rtlopt, startdef: lif_layer, recur: true)
+Completed clip mux common data inputs (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting clip the non-user hierarchies [v2.0] (stage: pre_rtlopt, startdef: lif_layer, recur: true)
+Completed clip the non-user hierarchies (accepts: 0, rejects: 0, runtime: 0.000s)
+
+Stage: pre_rtlopt
+----------------------------------------------------------------
+| Transform                 | Accepts | Rejects | Runtime (ms) | 
+----------------------------------------------------------------
+| hlo_infer_macro           |       0 |       2 |        24.00 | 
+| hlo_decode_mux_sandwich   |       0 |       0 |         0.00 | 
+| hlo_mux_decode            |       0 |       0 |         0.00 | 
+| hlo_chop_mux              |       0 |       0 |         0.00 | 
+| hlo_mux_cascade_opt       |       0 |       0 |         0.00 | 
+| hlo_mux_consolidation     |       0 |       0 |         1.00 | 
+| hlo_constant_mux_opt      |       0 |       0 |         0.00 | 
+| hlo_inequality_transform  |       0 |       0 |        23.00 | 
+| hlo_reconv_opt            |       0 |       0 |         0.00 | 
+| hlo_restructure           |       0 |       0 |         0.00 | 
+| hlo_common_select_muxopto |       0 |       0 |         0.00 | 
+| hlo_identity_transform    |       0 |       0 |         0.00 | 
+| hlo_reduce_operator_chain |       0 |       0 |         0.00 | 
+| hlo_mux_cascade_opt       |       0 |       0 |         0.00 | 
+| hlo_mux_consolidation     |       0 |       0 |         1.00 | 
+| hlo_optimize_datapath     |       0 |       0 |         0.00 | 
+| hlo_datapath_recast       |       0 |       0 |         0.00 | 
+| hlo_clip_mux_input        |       0 |       0 |         0.00 | 
+| hlo_clip                  |       0 |       0 |         0.00 | 
+----------------------------------------------------------------
+Running Unified Mux Engine Tricks...
+Completed Unified Mux Engine Tricks
+
+Stage: post_hlo_rtlopt
+--------------------------------------------------
+| Trick       | Accepts | Rejects | Runtime (ms) | 
+--------------------------------------------------
+| ume_runtime |       0 |       0 |         0.00 | 
+--------------------------------------------------
+Number of big hc bmuxes before = 0
+Info    : Pre-processed datapath logic. [DPOPT-6]
+        : Pre-processing optimizations applied to datapath logic in 'lif_layer':
+          msb_trim(1) 
+Info    : Optimizing datapath logic. [DPOPT-1]
+        : Optimizing datapath logic in 'lif_layer'.
+Info    : Implementing datapath configurations. [DPOPT-3]
+        : Implementing datapath configurations for 'CDN_DP_region_2_0'
+CSAGen Prep Share:0 Re-Write:1 Speculation: 0
+MaxCSA: Successfully built Maximal CSA Expression Expr0

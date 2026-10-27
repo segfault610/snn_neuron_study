@@ -1,0 +1,17 @@
+TOOL:	xrun(64)	24.09-s005: Started on Oct 27, 2026 at 12:50:02 IST
+xrun(64): 24.09-s005: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+file: rtl/izhikevich/izhikevich_layer.sv
+	module worklib.izhikevich_layer:sv
+		errors: 0, warnings: 0
+file: tb/izhikevich/tb_izhikevich_layer.sv
+	module worklib.tb_izhikevich_layer:sv
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		tb_izhikevich_layer
+            ) u_neuron (
+                     |
+xmelab: *E,CUVMUR (./rtl/izhikevich/izhikevich_layer.sv,24|21): instance 'tb_izhikevich_layer.dut@izhikevich_layer<module>.GEN_IZH[0].u_neuron' of design unit 'izhikevich_neuron' is unresolved in 'worklib.izhikevich_layer:sv'.
+xrun: *E,ELBERR: Error (*E) or soft error (*SE) occurred during elaboration (status 1), exiting.
+TOOL:	xrun(64)	24.09-s005: Exiting on Oct 27, 2026 at 12:50:02 IST  (total: 00:00:00)

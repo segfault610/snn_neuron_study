@@ -1,0 +1,25 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-XLMODE
+sim/xcelium_hodgkin_huxley/run.lnx8664.24.09.d
+-RUNMODE
+-amsdlibdir
+sim/xcelium_hodgkin_huxley/AMSD
+-sv
+rtl/hodgkin_huxley/hodgkin_huxley_neuron.sv
+tb/hodgkin_huxley/tb_hodgkin_huxley_neuron.sv
+-XMLIBDIRNAME
+sim/xcelium_hodgkin_huxley
+-CDSLIB
+sim/xcelium_hodgkin_huxley/run.lnx8664.24.09.d/cdsrun.lib
+-HDLVAR
+sim/xcelium_hodgkin_huxley/run.lnx8664.24.09.d/hdlrun.var
+-no_analogsolver
+-MESSAGES
+-UPDATE
+-XLLIBSTORE
+sim/xcelium_hodgkin_huxley/run.lnx8664.24.09.d/xllibs
+-ALLOWUNBOUND
+-hastop

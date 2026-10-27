@@ -1,0 +1,5 @@
+//
+// File created by:  xrun
+// Do not modify this file
+
+s1::(27Oct2026:12:50:02):( xrun -64bit -sv rtl/izhikevich/izhikevich_layer.sv tb/izhikevich/tb_izhikevich_layer.sv -top tb_izhikevich_layer -access +rwc -xmlibdirname /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/xcelium_izhikevich_tb_izhikevich_layer -l /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/xrun_izhikevich_tb_izhikevich_layer.log -run )&&(/home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/xcelium_izhikevich_tb_izhikevich_layer/env.d/env.history.27Oct2026_12_50_02)

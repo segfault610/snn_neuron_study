@@ -1,0 +1,51 @@
+TOOL:	xrun(64)	24.09-s005: Started on Oct 27, 2026 at 12:49:53 IST
+xrun(64): 24.09-s005: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+file: rtl/izhikevich/izhikevich_neuron.sv
+	module worklib.izhikevich_neuron:sv
+		errors: 0, warnings: 0
+file: tb/izhikevich/tb_izhikevich_neuron.sv
+	module worklib.tb_izhikevich_neuron:sv
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		tb_izhikevich_neuron
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.izhikevich_neuron:sv <0x4bb8401c>
+			streams:   7, words:  5276
+		worklib.tb_izhikevich_neuron:sv <0x7354ba3c>
+			streams:  12, words:  8071
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 2       2
+		Registers:              17      17
+		Scalar wires:            5       -
+		Vectored wires:          4       -
+		Always blocks:           3       3
+		Initial blocks:          5       5
+		Cont. assignments:       1       1
+		Pseudo assignments:      6       -
+		Process Clocks:          1       1
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.tb_izhikevich_neuron:sv
+FlexNet Licensing checkout error: No such feature exists.
+Feature:       Xcelium_Limited_Single_Core
+License path:  5280@14.139.1.126:1717@14.139.1.126:
+FlexNet Licensing error:-5,147.  System Error: 2 "No such file or directory"
+For further information, refer to the FlexNet Licensing documentation,
+available at "www.flexerasoftware.com".
+license file(s):  5280@14.139.1.126 1717@14.139.1.126
+Checkout succeeded: Xcelium_Single_Core/3F1B5757AA783123D682
+	License file: 5280@14.139.1.126
+	License Server: 5280@14.139.1.126
+Loading snapshot worklib.tb_izhikevich_neuron:sv .................... Done
+xcelium> source /home/cadence/install_RB_8.7/XCELIUM2409/tools/xcelium/files/xmsimrc
+xcelium> run
+Izhikevich TB complete: v=-70 spike=0
+Simulation complete via $finish(1) at time 2215 NS + 0
+./tb/izhikevich/tb_izhikevich_neuron.sv:39         $finish;
+xcelium> exit
+TOOL:	xrun(64)	24.09-s005: Exiting on Oct 27, 2026 at 12:49:56 IST  (total: 00:00:03)

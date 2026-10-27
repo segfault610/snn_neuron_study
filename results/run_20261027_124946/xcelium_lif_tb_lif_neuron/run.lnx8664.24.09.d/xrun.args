@@ -1,0 +1,17 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-64bit
+-sv
+rtl/lif/lif_neuron.sv
+tb/lif/tb_lif_neuron.sv
+-top
+tb_lif_neuron
+-access
++rwc
+-xmlibdirname
+/home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/xcelium_lif_tb_lif_neuron
+-l
+/home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/xrun_lif_tb_lif_neuron.log
+-run

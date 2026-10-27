@@ -1,0 +1,27 @@
+xrun(64): 24.09-s005: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	24.09-s005: Started on Oct 27, 2026 at 12:50:01 IST
+xrun
+	-64bit
+	-sv
+	rtl/lif/lif_layer.sv
+	tb/lif/tb_lif_layer.sv
+	-top tb_lif_layer
+	-access +rwc
+	-xmlibdirname /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/xcelium_lif_tb_lif_layer
+	-l /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/xrun_lif_tb_lif_layer.log
+	-run
+file: rtl/lif/lif_layer.sv
+	module worklib.lif_layer:sv
+		errors: 0, warnings: 0
+file: tb/lif/tb_lif_layer.sv
+	module worklib.tb_lif_layer:sv
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		tb_lif_layer
+            ) u_neuron (
+                     |
+xmelab: *E,CUVMUR (./rtl/lif/lif_layer.sv,24|21): instance 'tb_lif_layer.dut@lif_layer<module>.GEN_LIF[0].u_neuron' of design unit 'lif_neuron' is unresolved in 'worklib.lif_layer:sv'.
+xrun: *E,ELBERR: Error (*E) or soft error (*SE) occurred during elaboration (status 1), exiting.
+TOOL:	xrun(64)	24.09-s005: Exiting on Oct 27, 2026 at 12:50:02 IST  (total: 00:00:01)

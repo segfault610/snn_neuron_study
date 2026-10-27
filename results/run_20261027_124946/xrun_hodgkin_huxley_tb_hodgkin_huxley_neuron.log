@@ -1,0 +1,51 @@
+xrun(64): 24.09-s005: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	24.09-s005: Started on Oct 27, 2026 at 12:49:56 IST
+xrun
+	-64bit
+	-sv
+	rtl/hodgkin_huxley/hodgkin_huxley_neuron.sv
+	tb/hodgkin_huxley/tb_hodgkin_huxley_neuron.sv
+	-top tb_hodgkin_huxley_neuron
+	-access +rwc
+	-xmlibdirname /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/xcelium_hodgkin_huxley_tb_hodgkin_huxley_neuron
+	-l /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/xrun_hodgkin_huxley_tb_hodgkin_huxley_neuron.log
+	-run
+file: rtl/hodgkin_huxley/hodgkin_huxley_neuron.sv
+	module worklib.hodgkin_huxley_neuron:sv
+		errors: 0, warnings: 0
+file: tb/hodgkin_huxley/tb_hodgkin_huxley_neuron.sv
+	module worklib.tb_hodgkin_huxley_neuron:sv
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		tb_hodgkin_huxley_neuron
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.hodgkin_huxley_neuron:sv <0x62ae2260>
+			streams:   6, words:  7371
+		worklib.tb_hodgkin_huxley_neuron:sv <0x75dbb463>
+			streams:  12, words:  8071
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 2       2
+		Registers:              24      24
+		Scalar wires:            5       -
+		Vectored wires:          4       -
+		Always blocks:           3       3
+		Initial blocks:          5       5
+		Cont. assignments:       1       1
+		Pseudo assignments:      6       -
+		Process Clocks:          1       1
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.tb_hodgkin_huxley_neuron:sv
+Loading snapshot worklib.tb_hodgkin_huxley_neuron:sv .................... Done
+xcelium> source /home/cadence/install_RB_8.7/XCELIUM2409/tools/xcelium/files/xmsimrc
+xcelium> run
+HH TB complete: v=-51 spike=0
+Simulation complete via $finish(1) at time 2215 NS + 0
+./tb/hodgkin_huxley/tb_hodgkin_huxley_neuron.sv:39         $finish;
+xcelium> exit
+TOOL:	xrun(64)	24.09-s005: Exiting on Oct 27, 2026 at 12:50:01 IST  (total: 00:00:05)

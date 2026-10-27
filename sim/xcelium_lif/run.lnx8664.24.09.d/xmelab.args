@@ -1,0 +1,25 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-amsdlibdir
+sim/xcelium_lif/AMSD
+-ACCESS
++rwc
+-XMLIBDIRNAME
+sim/xcelium_lif
+-no_analogsolver
+-MESSAGES
+tb_lif_neuron
+-dms_perf
+-XLMODE
+sim/xcelium_lif/run.lnx8664.24.09.d
+-RUNMODE
+-CDSLIB
+sim/xcelium_lif/run.lnx8664.24.09.d/cds.lib
+-HDLVAR
+sim/xcelium_lif/run.lnx8664.24.09.d/hdl.var
+-WORK
+worklib
+-IRUNHASTOP
+-HASXLMODE

@@ -1,0 +1,41 @@
+============================================================
+SNN NEURON STUDY: FULL EXECUTION
+============================================================
+Project : /home/userdata/24bvd0198/snn_neuron_study
+Run dir : /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_123754
+Started : Tue Oct 27 12:37:54 IST 2026
+
+Environment information saved.
+ERROR: xrun not found; skipping simulation phase.
+ERROR: genus not found; skipping synthesis phase.
+WARNING: Neither 'lec' nor 'conformal' was found.
+Skipping LEC. See environment.txt.
+
+============================================================
+COLLECTING OUTPUTS
+============================================================
+Diagnostic archive: /home/userdata/24bvd0198/snn_neuron_study/results/snn_run_20261027_123754.tar.gz
+
+============================================================
+FINAL SUMMARY
+============================================================
+STEP              STATUS   EXIT_CODE  LOG
+SIMULATION_PHASE  SKIPPED  127        xrun not found
+SYNTHESIS_PHASE   SKIPPED  127        genus not found
+LEC_PHASE         SKIPPED  127        Conformal executable not found
+
+===== COUNTS =====
+PASS: 0
+FAIL: 0
+SKIPPED: 3
+
+===== OUTPUT LOCATIONS =====
+Run directory : /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_123754
+Summary       : /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_123754/summary.tsv
+Console log   : /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_123754/console.log
+Key messages  : /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_123754/key_messages.txt
+Environment   : /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_123754/environment.txt
+Archive       : /home/userdata/24bvd0198/snn_neuron_study/results/snn_run_20261027_123754.tar.gz
+
+Finished: Tue Oct 27 12:37:55 IST 2026
+Workflow finished; review results before treating any stage as passing.

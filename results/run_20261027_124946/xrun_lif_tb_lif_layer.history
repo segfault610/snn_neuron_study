@@ -1,0 +1,2 @@
+#e1(27Oct2026:12:50:01): source /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/xcelium_lif_tb_lif_layer/env.d/env.history.27Oct2026_12_50_01
+s1(27Oct2026:12:50:01):  xrun -64bit -sv rtl/lif/lif_layer.sv tb/lif/tb_lif_layer.sv -top tb_lif_layer -access +rwc -xmlibdirname /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/xcelium_lif_tb_lif_layer -l /home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/xrun_lif_tb_lif_layer.log -run 

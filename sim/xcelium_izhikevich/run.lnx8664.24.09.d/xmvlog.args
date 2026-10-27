@@ -1,0 +1,25 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-XLMODE
+sim/xcelium_izhikevich/run.lnx8664.24.09.d
+-RUNMODE
+-amsdlibdir
+sim/xcelium_izhikevich/AMSD
+-sv
+rtl/izhikevich/izhikevich_neuron.sv
+tb/izhikevich/tb_izhikevich_neuron.sv
+-XMLIBDIRNAME
+sim/xcelium_izhikevich
+-CDSLIB
+sim/xcelium_izhikevich/run.lnx8664.24.09.d/cdsrun.lib
+-HDLVAR
+sim/xcelium_izhikevich/run.lnx8664.24.09.d/hdlrun.var
+-no_analogsolver
+-MESSAGES
+-UPDATE
+-XLLIBSTORE
+sim/xcelium_izhikevich/run.lnx8664.24.09.d/xllibs
+-ALLOWUNBOUND
+-hastop

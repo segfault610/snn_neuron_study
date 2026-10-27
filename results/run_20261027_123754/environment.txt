@@ -1,0 +1,48 @@
+Date: Tue Oct 27 12:37:54 IST 2026
+Host: cadence-server.vit.ac.in
+User: 24bvd0198
+Project: /home/userdata/24bvd0198/snn_neuron_study
+
+===== GIT =====
+## main...origin/main
+ M rtl/hodgkin_huxley/hodgkin_huxley_layer.sv
+ M rtl/hodgkin_huxley/hodgkin_huxley_neuron.sv
+ M rtl/izhikevich/izhikevich_layer.sv
+ M rtl/izhikevich/izhikevich_neuron.sv
+ M rtl/lif/lif_layer.sv
+?? asic/scripts/run_everything.sh
+?? flex257.log
+?? flex324.log
+?? flex806.log
+?? results/
+?? sim/logs/hodgkin_huxley_neuron.history
+?? sim/logs/hodgkin_huxley_neuron.log
+?? sim/logs/izhikevich_neuron.history
+?? sim/logs/izhikevich_neuron.log
+?? sim/logs/lif_neuron.history
+?? sim/logs/lif_neuron.log
+?? sim/waves/
+?? sim/xcelium_hodgkin_huxley/
+?? sim/xcelium_izhikevich/
+?? sim/xcelium_lif/
+8db858a Add layer testbenches and generalized Genus LEC flow
+
+===== TOOL LOCATIONS =====
+xrun        NOT FOUND
+genus       NOT FOUND
+lec         NOT FOUND
+conformal   NOT FOUND
+innovus     NOT FOUND
+tempus      NOT FOUND
+
+===== RTL FILE SIZES =====
+  56 1502 rtl/lif/lif_neuron.sv
+ 35 930 rtl/lif/lif_layer.sv
+  58 1549 rtl/izhikevich/izhikevich_neuron.sv
+ 35 952 rtl/izhikevich/izhikevich_layer.sv
+  89 2451 rtl/hodgkin_huxley/hodgkin_huxley_neuron.sv
+ 35 960 rtl/hodgkin_huxley/hodgkin_huxley_layer.sv
+
+===== TOOL VERSIONS =====
+asic/scripts/run_everything.sh: line 96: xrun: command not found
+asic/scripts/run_everything.sh: line 97: genus: command not found

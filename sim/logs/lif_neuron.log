@@ -1,0 +1,51 @@
+xrun(64): 24.09-s005: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	24.09-s005: Started on Oct 27, 2026 at 12:30:17 IST
+xrun
+	-64bit
+	-sv
+	rtl/lif/lif_neuron.sv
+	tb/lif/tb_lif_neuron.sv
+	-top tb_lif_neuron
+	-access +rwc
+	-l sim/logs/lif_neuron.log
+	-xmlibdirname sim/xcelium_lif
+	-run
+file: rtl/lif/lif_neuron.sv
+	module worklib.lif_neuron:sv
+		errors: 0, warnings: 0
+file: tb/lif/tb_lif_neuron.sv
+	module worklib.tb_lif_neuron:sv
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		tb_lif_neuron
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.lif_neuron:sv <0x4d833942>
+			streams:   5, words:  1806
+		worklib.tb_lif_neuron:sv <0x6147a81f>
+			streams:  12, words:  8574
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 2       2
+		Registers:              12      12
+		Scalar wires:            5       -
+		Vectored wires:          4       -
+		Always blocks:           3       3
+		Initial blocks:          5       5
+		Cont. assignments:       1       1
+		Pseudo assignments:      6       -
+		Process Clocks:          1       1
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.tb_lif_neuron:sv
+Loading snapshot worklib.tb_lif_neuron:sv .................... Done
+xcelium> source /home/cadence/install_RB_8.7/XCELIUM2409/tools/xcelium/files/xmsimrc
+xcelium> run
+LIF TB complete: v=0 spike=0
+Simulation complete via $finish(1) at time 195 NS + 0
+./tb/lif/tb_lif_neuron.sv:43         $finish;
+xcelium> exit
+TOOL:	xrun(64)	24.09-s005: Exiting on Oct 27, 2026 at 12:30:19 IST  (total: 00:00:02)

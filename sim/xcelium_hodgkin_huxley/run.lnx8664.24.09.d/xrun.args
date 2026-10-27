@@ -1,0 +1,17 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-64bit
+-sv
+rtl/hodgkin_huxley/hodgkin_huxley_neuron.sv
+tb/hodgkin_huxley/tb_hodgkin_huxley_neuron.sv
+-top
+tb_hodgkin_huxley_neuron
+-access
++rwc
+-l
+sim/logs/hodgkin_huxley_neuron.log
+-xmlibdirname
+sim/xcelium_hodgkin_huxley
+-run

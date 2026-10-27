@@ -1,0 +1,25 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-XLMODE
+/home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/xcelium_lif_tb_lif_layer/run.lnx8664.24.09.d
+-RUNMODE
+-amsdlibdir
+/home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/xcelium_lif_tb_lif_layer/AMSD
+-sv
+rtl/lif/lif_layer.sv
+tb/lif/tb_lif_layer.sv
+-XMLIBDIRNAME
+/home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/xcelium_lif_tb_lif_layer
+-CDSLIB
+/home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/xcelium_lif_tb_lif_layer/run.lnx8664.24.09.d/cdsrun.lib
+-HDLVAR
+/home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/xcelium_lif_tb_lif_layer/run.lnx8664.24.09.d/hdlrun.var
+-no_analogsolver
+-MESSAGES
+-UPDATE
+-XLLIBSTORE
+/home/userdata/24bvd0198/snn_neuron_study/results/run_20261027_124946/xcelium_lif_tb_lif_layer/run.lnx8664.24.09.d/xllibs
+-ALLOWUNBOUND
+-hastop

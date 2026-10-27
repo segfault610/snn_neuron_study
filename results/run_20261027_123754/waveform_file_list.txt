@@ -1,0 +1,3 @@
+/home/userdata/24bvd0198/snn_neuron_study/sim/waves/lif_neuron.vcd
+/home/userdata/24bvd0198/snn_neuron_study/sim/waves/izhikevich_neuron.vcd
+/home/userdata/24bvd0198/snn_neuron_study/sim/waves/hodgkin_huxley_neuron.vcd

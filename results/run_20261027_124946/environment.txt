@@ -1,0 +1,65 @@
+Date: Tue Oct 27 12:49:46 IST 2026
+Host: cadence-server.vit.ac.in
+User: 24bvd0198
+Project: /home/userdata/24bvd0198/snn_neuron_study
+
+===== GIT =====
+## main...origin/main
+ M rtl/hodgkin_huxley/hodgkin_huxley_layer.sv
+ M rtl/hodgkin_huxley/hodgkin_huxley_neuron.sv
+ M rtl/izhikevich/izhikevich_layer.sv
+ M rtl/izhikevich/izhikevich_neuron.sv
+ M rtl/lif/lif_layer.sv
+?? asic/scripts/run_everything.sh
+?? flex257.log
+?? flex324.log
+?? flex806.log
+?? launch_asic.csh
+?? results/
+?? run_background.log
+?? sim/logs/hodgkin_huxley_neuron.history
+?? sim/logs/hodgkin_huxley_neuron.log
+?? sim/logs/izhikevich_neuron.history
+?? sim/logs/izhikevich_neuron.log
+?? sim/logs/lif_neuron.history
+?? sim/logs/lif_neuron.log
+?? sim/waves/
+?? sim/xcelium_hodgkin_huxley/
+?? sim/xcelium_izhikevich/
+?? sim/xcelium_lif/
+8db858a Add layer testbenches and generalized Genus LEC flow
+
+===== TOOL LOCATIONS =====
+xrun        /home/cadence/install_RB_8.7/XCELIUM2409/tools/bin/xrun
+genus       /home/cadence/install_RB_8.7/GENUS211/bin/genus
+lec         /home/cadence/install_RB_8.7/CONFRML211/bin/lec
+conformal   NOT FOUND
+innovus     /home/cadence/install_RB_8.7/INNOVUS211/bin/innovus
+tempus      /home/cadence/install_RB_8.7/SSV221/bin/tempus
+
+===== RTL FILE SIZES =====
+  56 1502 rtl/lif/lif_neuron.sv
+ 35 930 rtl/lif/lif_layer.sv
+  58 1549 rtl/izhikevich/izhikevich_neuron.sv
+ 35 952 rtl/izhikevich/izhikevich_layer.sv
+  89 2451 rtl/hodgkin_huxley/hodgkin_huxley_neuron.sv
+ 35 960 rtl/hodgkin_huxley/hodgkin_huxley_layer.sv
+
+===== TOOL VERSIONS =====
+TOOL:	xrun(64)	24.09-s005
+2026/10/27 12:49:46 WARNING This OS does not appear to be a Cadence supported Linux configuration.
+2026/10/27 12:49:46 For more info, please run CheckSysConf in <cdsRoot/tools.lnx86/bin/checkSysConf <productId>
+TMPDIR is being set to /tmp/genus_temp_1406195_cadence-server.vit.ac.in_24bvd0198_sxTiD4
+Program Name: Genus(TM) Synthesis Solution, Version: 21.14-s082_1
+@(#)CDS: SYNTECH 21.14-s005_1 () Mar 25 2022 04:25:04 ( )
+@(#)CDS: SGN 21.10-d001 (04-May-2021) (64 bit executable, TkQt5.9.0)
+@(#)CDS: STYLUS 21.12-s008_1 (04/27/2022 03:28 PDT)
+@(#)CDS: AAE 21.14-s012
+@(#)CDS: Ext/IQuantus 21.11-w001
+@(#)CDS: humroute 21.14-s009
+@(#)CDS: preRoute 21.14-s001
+@(#)CDS: halo 20.10-d002
+@(#)CDS: ncprot 20.09-s021
+
+This build will expire on 4/11/2023. Contact Cadence Support for assistance.
+Normal exit.
